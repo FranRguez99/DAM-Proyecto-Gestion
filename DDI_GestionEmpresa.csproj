@@ -108,6 +108,8 @@
     </Compile>
     <Compile Include="ConexionBD\Connection.cs" />
     <Compile Include="ConexionBD\DatabaseConnection.cs" />
+    <Compile Include="Modelo\Tutor.cs" />
+    <Compile Include="Modelo\TutorCRUD.cs" />
     <Compile Include="Vista\VentanaPrincipal.xaml.cs">
       <DependentUpon>VentanaPrincipal.xaml</DependentUpon>
     </Compile>
