@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace DDI_GestionEmpresa.ConexionBD
 {
+    // Prueba
     public class Connection
     {
         protected string server = "localhost";
