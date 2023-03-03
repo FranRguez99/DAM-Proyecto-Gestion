@@ -67,6 +67,7 @@ namespace DDI_GestionEmpresa.Modelo
 
             return dt;
         }
+
         public void InsertAlumno(Alumno alumno)
         {
             string query = "INSERT INTO alumnos Values (?,?,?,?,?);";
