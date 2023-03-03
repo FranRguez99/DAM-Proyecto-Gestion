@@ -9,27 +9,48 @@
     <Grid Height="auto" Width="auto">
         <TabControl>
             <TabItem Header="Empresas">
-                <Grid Height="720" Width="1280">
-                    
+                <Grid Height="600" Width="800">
+                    <DataGrid x:Name="dgEmpresas" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="75,55,75,125" AutoGenerateColumns="False" >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="CIF" Binding="{Binding cif}" Width="*"/>
+                            <DataGridTextColumn Header="Nombre" Binding="{Binding nombre}" Width="*"/>
+                            <DataGridTextColumn Header="Direccion" Binding="{Binding direccion}" Width="*"/>
+                            <DataGridTextColumn Header="Código Postal" Binding="{Binding codPostal}" Width="*"/>
+                            <DataGridTextColumn Header="Localidad" Binding="{Binding localidad}" Width="*"/>
+                            <DataGridTextColumn Header="Mail" Binding="{Binding mail}" Width="*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Label Content="GESTIÓN DE DATOS DE EMPRESAS" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.254,0.508"/>
+                    <Button x:Name="btInsertarEmpresa" Content="Insertar" HorizontalAlignment="Left" Margin="173,515,0,0" VerticalAlignment="Top" Width="100" Height="40"/>
+                    <Button x:Name="btModificarEmpresa" Content="Modificar" HorizontalAlignment="Center" Margin="0,515,0,0" VerticalAlignment="Top" Width="100" Height="40"/>
+                    <Button x:Name="btEliminarEmpresa" Content="Eliminar" HorizontalAlignment="Left" Margin="537,515,0,0" VerticalAlignment="Top" Width="100" Height="40"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Alumnos">
                 <Grid Background="#FFE5E5E5" Height="600" Width="800">
-                    <DataGrid IsReadOnly="True" SelectedCellsChanged="tablaAlumno_SelectedCellsChanged" x:Name="tablaAlumno" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="342,134,63,182"/>
-                    <Label Content="GESTOR DE LOS ALUMNOS " HorizontalAlignment="Left" Margin="217,50,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift" FontSize="28" FontWeight="Bold" FontStyle="Italic" RenderTransformOrigin="0.541,0.516"/>
-                    <Label Content="Nombre:" HorizontalAlignment="Left" Margin="52,212,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift"/>
-                    <Label Content="Cod del Alumno:" HorizontalAlignment="Left" Margin="41,121,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift"/>
-                    <TextBox x:Name="tfNombreAlumno" HorizontalAlignment="Left" Margin="141,212,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Height="22"/>
-                    <Label Content="DNI:" HorizontalAlignment="Left" Margin="56,286,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift" RenderTransformOrigin="0.613,1.163"/>
-                    <Label Content="Apellidos:" HorizontalAlignment="Left" Margin="56,368,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift" RenderTransformOrigin="0.68,2.014"/>
-                    <TextBox x:Name="tfDniAlumno" HorizontalAlignment="Left" Margin="141,288,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="94" Height="22"/>
-                    <TextBox x:Name="tfApellidosAlumno" HorizontalAlignment="Left" Margin="141,370,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="94" Height="22" RenderTransformOrigin="0.272,2.04"/>
-                    <TextBox x:Name="tfCodAlumno" HorizontalAlignment="Left" Margin="177,123,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="51" Height="22"/>
-                    <Label Content="Fecha Nac.:" HorizontalAlignment="Left" Margin="56,446,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift" RenderTransformOrigin="0.68,2.014"/>
-                    <DatePicker SelectedDateFormat="Short" x:Name="dpFechaNacAlumno" HorizontalAlignment="Left" Margin="141,446,0,0" VerticalAlignment="Top" Width="149"/>
-                    <Button Name="btInsertAlumn" Content="AÑADIR" HorizontalAlignment="Left" Margin="342,492,0,0" VerticalAlignment="Top" Height="41" Width="123" Click="btInsertAlumn_Click"/>
-                    <Button Name="btElimAlumn" Content="ELIMINAR" HorizontalAlignment="Left" Margin="614,492,0,0" VerticalAlignment="Top" Height="41" Width="123" Click="btElimAlumn_Click" />
-                    <Button Name="btModiAlumn" Content="MODIFICAR" HorizontalAlignment="Left" Margin="478,492,0,0" VerticalAlignment="Top" Height="41" Width="123" Click="btModiAlumn_Click"/>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="43*"/>
+                        <RowDefinition Height="557*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="17*"/>
+                        <ColumnDefinition Width="383*"/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid IsReadOnly="True" SelectedCellsChanged="tablaAlumno_SelectedCellsChanged" x:Name="tablaAlumno" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="308,91,63,182" Grid.Column="1" Grid.Row="1"/>
+                    <Label Content="GESTOR DE LOS ALUMNOS " HorizontalAlignment="Left" Margin="183,7,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift" FontSize="28" FontWeight="Bold" FontStyle="Italic" RenderTransformOrigin="0.541,0.516" Grid.Column="1" Grid.Row="1"/>
+                    <Label Content="Nombre:" HorizontalAlignment="Left" Margin="18,169,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift" Grid.Column="1" Grid.Row="1"/>
+                    <Label Content="Cod del Alumno:" HorizontalAlignment="Left" Margin="7,78,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift" Grid.Column="1" Grid.Row="1"/>
+                    <TextBox x:Name="tfNombreAlumno" HorizontalAlignment="Left" Margin="107,169,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Height="22" Grid.Column="1" Grid.Row="1"/>
+                    <Label Content="DNI:" HorizontalAlignment="Left" Margin="22,244,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift" RenderTransformOrigin="0.613,1.163" Grid.Column="1" Grid.Row="1"/>
+                    <Label Content="Apellidos:" HorizontalAlignment="Left" Margin="22,325,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift" RenderTransformOrigin="0.68,2.014" Grid.Column="1" Grid.Row="1"/>
+                    <TextBox x:Name="tfDniAlumno" HorizontalAlignment="Left" Margin="107,246,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="94" Height="22" Grid.Column="1" Grid.Row="1"/>
+                    <TextBox x:Name="tfApellidosAlumno" HorizontalAlignment="Left" Margin="107,327,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="94" Height="22" RenderTransformOrigin="0.272,2.04" Grid.Column="1" Grid.Row="1"/>
+                    <TextBox x:Name="tfCodAlumno" HorizontalAlignment="Left" Margin="143,80,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="51" Height="22" Grid.Column="1" Grid.Row="1"/>
+                    <Label Content="Fecha Nac.:" HorizontalAlignment="Left" Margin="22,403,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift" RenderTransformOrigin="0.68,2.014" Grid.Column="1" Grid.Row="1"/>
+                    <DatePicker SelectedDateFormat="Short" x:Name="dpFechaNacAlumno" HorizontalAlignment="Left" Margin="107,403,0,0" VerticalAlignment="Top" Width="149" Grid.Column="1" Grid.Row="1"/>
+                    <Button Name="btInsertAlumn" Content="AÑADIR" HorizontalAlignment="Left" Margin="308,449,0,0" VerticalAlignment="Top" Height="41" Width="123" Click="btInsertAlumn_Click" Grid.Column="1" Grid.Row="1"/>
+                    <Button Name="btElimAlumn" Content="ELIMINAR" HorizontalAlignment="Left" Margin="580,449,0,0" VerticalAlignment="Top" Height="41" Width="123" Click="btElimAlumn_Click" Grid.Column="1" Grid.Row="1" />
+                    <Button Name="btModiAlumn" Content="MODIFICAR" HorizontalAlignment="Left" Margin="444,449,0,0" VerticalAlignment="Top" Height="41" Width="123" Click="btModiAlumn_Click" Grid.Column="1" Grid.Row="1"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Tutores">

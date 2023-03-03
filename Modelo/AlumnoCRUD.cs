@@ -12,18 +12,18 @@ namespace DDI_GestionEmpresa.Modelo
 {
     public class AlumnoCRUD
     {
-        private DatabaseConnection db;
+        private DatabaseConnection databaseConnection;
 
         public AlumnoCRUD()
         {
-            db = new DatabaseConnection();
+            databaseConnection = new DatabaseConnection();
         }
 
         public List<Alumno> GetAllAlumnos()
         {
             List<Alumno> alumnos = new List<Alumno>();
             string query = "SELECT * FROM alumnos";
-            MySqlCommand cmd = new MySqlCommand(query, db.getConnection());
+            MySqlCommand cmd = new MySqlCommand(query, databaseConnection.getConnection());
 
             try
             {
@@ -46,7 +46,7 @@ namespace DDI_GestionEmpresa.Modelo
             }
             finally
             {
-                db.closeConexion();
+                databaseConnection.closeConexion();
             }
 
             return alumnos;
@@ -70,7 +70,7 @@ namespace DDI_GestionEmpresa.Modelo
         public void InsertAlumno(Alumno alumno)
         {
             string query = "INSERT INTO alumnos Values (?,?,?,?,?);";
-            MySqlCommand cmd = new MySqlCommand(query, db.getConnection());
+            MySqlCommand cmd = new MySqlCommand(query, databaseConnection.getConnection());
             cmd.Parameters.AddWithValue("@idAlumno", alumno.IdAlumno);
             cmd.Parameters.AddWithValue("@dni", alumno.Dni);
             cmd.Parameters.AddWithValue("@nombre", alumno.Nombre);
@@ -86,7 +86,7 @@ namespace DDI_GestionEmpresa.Modelo
             }
             finally
             {
-                db.closeConexion();
+                databaseConnection.closeConexion();
 
             }
         }
@@ -95,7 +95,7 @@ namespace DDI_GestionEmpresa.Modelo
         {
             string query = "UPDATE alumnos SET dni=@dni, nombre=@nombre, apellido=@apellido, fechaNac=@fechaNacimiento " +
                 "WHERE idalumno=@idAlumno";
-            MySqlCommand cmd = new MySqlCommand(query, db.getConnection());
+            MySqlCommand cmd = new MySqlCommand(query, databaseConnection.getConnection());
             cmd.Parameters.AddWithValue("@idAlumno", alumno.IdAlumno);
             cmd.Parameters.AddWithValue("@dni", alumno.Dni);
             cmd.Parameters.AddWithValue("@nombre", alumno.Nombre);
@@ -112,14 +112,14 @@ namespace DDI_GestionEmpresa.Modelo
             }
             finally
             {
-                db.closeConexion();
+                databaseConnection.closeConexion();
             }
         }
 
         public void DeleteAlumno(int idAlumno)
         {
             string query = "DELETE FROM alumnos WHERE idalumno=@idAlumno";
-            MySqlCommand cmd = new MySqlCommand(query, db.getConnection());
+            MySqlCommand cmd = new MySqlCommand(query, databaseConnection.getConnection());
             cmd.Parameters.AddWithValue("@idAlumno", idAlumno);
 
             try
@@ -132,7 +132,7 @@ namespace DDI_GestionEmpresa.Modelo
             }
             finally
             {
-                db.closeConexion();
+                databaseConnection.closeConexion();
             }
         }
     }

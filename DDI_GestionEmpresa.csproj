@@ -108,6 +108,11 @@
     </Compile>
     <Compile Include="ConexionBD\Connection.cs" />
     <Compile Include="ConexionBD\DatabaseConnection.cs" />
+    <Compile Include="Modelo\Empresa.cs" />
+    <Compile Include="Modelo\EmpresaCRUD.cs" />
+    <Compile Include="Vista\FormularioEmpresas.xaml.cs">
+      <DependentUpon>FormularioEmpresas.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Vista\VentanaPrincipal.xaml.cs">
       <DependentUpon>VentanaPrincipal.xaml</DependentUpon>
     </Compile>
@@ -142,6 +147,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Vista\FormularioEmpresas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Vista\VentanaPrincipal.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
