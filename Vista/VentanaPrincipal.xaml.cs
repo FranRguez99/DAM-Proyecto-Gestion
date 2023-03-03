@@ -33,6 +33,7 @@ namespace DDI_GestionEmpresa.Vista
         private void VentanaPrincipal_Loaded(object sender, RoutedEventArgs e)
         {
             tablaAlumno.ItemsSource = alumnoCRUD.GetAllAlumnosAsDataTable().DefaultView;
+            tablaTutor.ItemsSource = tutorCRUD.GetAllTutoresAsDataTable().DefaultView;
         }
 
         // Pestaña empresas
@@ -119,7 +120,7 @@ namespace DDI_GestionEmpresa.Vista
             int idTutores = int.Parse(tfCodTutor.Text);
             string nombre = tfNombreTutor.Text;
             string email = tfEmailTutor.Text;
-            int telefono = Int32.Parse(tfTlfTutor.Text);
+            string telefono = tfTlfTutor.Text;
             Tutor tutor = new Tutor(idTutores, nombre, email, telefono);
             tutorCRUD.InsertTutor(tutor);
             MessageBox.Show("Tutor insertado correctamente");
@@ -134,7 +135,7 @@ namespace DDI_GestionEmpresa.Vista
             int idTutores = int.Parse(tfCodTutor.Text);
             string nombre = tfNombreTutor.Text;
             string email = tfEmailTutor.Text;
-            int telefono = Int32.Parse(tfTlfTutor.Text);
+            string telefono = tfTlfTutor.Text;
             Tutor tutor = new Tutor(idTutores, nombre, email, telefono);
             tutorCRUD.UpdateTutor(tutor);
             MessageBox.Show("Tutor actualizado correctamente");
@@ -162,16 +163,16 @@ namespace DDI_GestionEmpresa.Vista
             if (rowView != null)
             {
                 // Obtenemos los valores de las celdas de la fila seleccionada
-                int idTutores = (int)rowView["idTutores"];
+                int idTutores = (int)rowView["idTutor"];
                 string nombre= (string)rowView["nombre"];
                 string email = (string)rowView["email"];
-                int telefono = (int)rowView["telefono"];
+                string telefono = (string)rowView["telefono"];
 
                 // Actualizamos los valores de los TextBox con los valores obtenidos
                 tfCodTutor.Text = idTutores.ToString();
                 tfNombreTutor.Text = nombre;
                 tfEmailTutor.Text = email;
-                tfTlfTutor.Text = telefono.ToString();
+                tfTlfTutor.Text = telefono;
             }
         }
 

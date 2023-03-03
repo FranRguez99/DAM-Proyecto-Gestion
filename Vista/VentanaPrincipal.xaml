@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DDI_GestionEmpresa.Vista"
         mc:Ignorable="d"
+        Loaded="VentanaPrincipal_Loaded"
         Title="VentanaPrincipal" Height="auto" Width="auto" SizeToContent="WidthAndHeight">
     <Grid Height="auto" Width="auto">
         <TabControl>
@@ -42,7 +43,7 @@
                         <ColumnDefinition Width="0*"/>
                         <ColumnDefinition Width="511*"/>
                     </Grid.ColumnDefinitions>
-                    <DataGrid x:Name="tablaTutor" SelectedCellsChanged="tablaTutores_SelectedCellsChanged" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="283,159,63,124" Grid.Column="2"/>
+                    <DataGrid x:Name="tablaTutor" IsReadOnly="True" SelectedCellsChanged="tablaTutores_SelectedCellsChanged" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="283,159,63,124" Grid.Column="2"/>
                     <Label Content="GESTOR DE LOS TUTORES" HorizontalAlignment="Left" Margin="144,50,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift" FontSize="28" FontWeight="Bold" FontStyle="Italic" RenderTransformOrigin="0.541,0.516" Grid.Column="2" Height="44" Width="334"/>
                     <Label Content="Nombre:" HorizontalAlignment="Left" Margin="2,226,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift" Grid.Column="2" Height="27" Width="63"/>
                     <Label Content="Cod del Tutor:" HorizontalAlignment="Left" Margin="3,145,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift" Height="27" Width="95" Grid.Column="2"/>

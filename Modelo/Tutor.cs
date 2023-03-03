@@ -12,10 +12,10 @@ namespace DDI_GestionEmpresa.Modelo
         public int idTutor{ get; set; }
         public string nombre { get; set; }
         public string email { get; set; }
-        public int telefono { get; set; }
+        public string telefono { get; set; }
 
         // Constructor completo de la clase Tutor
-        public Tutor(int idTutor, string nombre, string email, int telefono)
+        public Tutor(int idTutor, string nombre, string email, string telefono)
         {
             this.idTutor = idTutor;
             this.nombre = nombre;

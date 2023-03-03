@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using MySqlConnector;
 
 namespace DDI_GestionEmpresa.Modelo
 {
@@ -32,8 +33,8 @@ namespace DDI_GestionEmpresa.Modelo
                 {
                     int idTutor = reader.GetInt32(0);
                     string nombre = reader.GetString(1);
-                    string email= reader.GetString(2);
-                    int telefono = reader.GetString(3);
+                    string email = reader.GetString(2);
+                    string telefono = reader.GetString(3);
                     Tutor tutor = new Tutor(idTutor, nombre, email, telefono);
                     tutores.Add(tutor);
                 }
@@ -54,9 +55,9 @@ namespace DDI_GestionEmpresa.Modelo
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("idTutor", typeof(int));
-            dt.Columns.Add("Nombre", typeof(string));
+            dt.Columns.Add("nombre", typeof(string));
             dt.Columns.Add("email", typeof(string));
-            dt.Columns.Add("telefono", typeof(int));
+            dt.Columns.Add("telefono", typeof(string));
 
             foreach (Tutor t in GetAllTutores())
             {
@@ -91,7 +92,7 @@ namespace DDI_GestionEmpresa.Modelo
         public void UpdateTutor(Tutor tutor)
         {
             string query = "UPDATE tutores SET nombre=@nombre, email=@email, telefono=@telefono" +
-                "WHERE idTutor=@idTutor";
+                " WHERE idTutor=@idTutor";
             MySqlCommand cmd = new MySqlCommand(query, db.getConnection());
             cmd.Parameters.AddWithValue("@idTutor", tutor.idTutor);
             cmd.Parameters.AddWithValue("@nombre", tutor.nombre);
@@ -132,5 +133,4 @@ namespace DDI_GestionEmpresa.Modelo
             }
         }
     }
-}
 }
