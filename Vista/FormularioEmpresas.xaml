@@ -1,0 +1,52 @@
+﻿<Window x:Class="DDI_GestionEmpresa.Vista.FormularioEmpresas"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DDI_GestionEmpresa.Vista"
+        mc:Ignorable="d"
+        Title="FormularioEmpresas" Height="auto" Width="auto" SizeToContent="WidthAndHeight">
+    <Grid Name="gridDatosEmpresa" Grid.ColumnSpan="3" Margin="-10,19,10,-10">
+        <Label Content="GESTOR DE DATOS ALUMNOS EN PRÁCTICAS" HorizontalAlignment="Left" Margin="48,67,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift" FontSize="28" FontWeight="Bold" FontStyle="Italic" Grid.Column="2"/>
+        <Rectangle HorizontalAlignment="Left" Height="607" Margin="67,153,0,0" Stroke="Black" VerticalAlignment="Top" Width="490" Grid.ColumnSpan="3"/>
+        <Label Content="Modalidad:" HorizontalAlignment="Left" Margin="318,577,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.974,0.673" FontSize="14" FontFamily="Bahnschrift"/>
+        <Label Content="Mail:" HorizontalAlignment="Left" Margin="87,657,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift"/>
+        <Label Content="Nombre:" HorizontalAlignment="Left" Margin="87,341,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift"/>
+        <Label Content="Cod de la Empresa:" HorizontalAlignment="Left" Margin="74,244,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift"/>
+        <Label Content="Jornada:" HorizontalAlignment="Left" Margin="83,579,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift"/>
+        <Label Content="Localidad:" HorizontalAlignment="Left" Margin="87,494,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift"/>
+        <Label Content="C.P:" HorizontalAlignment="Left" Margin="334,494,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift"/>
+        <Label Content="Dirección:" HorizontalAlignment="Left" Margin="83,420,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift"/>
+        <Label Content="CIF:" HorizontalAlignment="Left" Margin="334,341,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift"/>
+        <Label Content="DATOS DE LA EMPRESA" HorizontalAlignment="Left" Margin="210,177,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Bahnschrift" FontStyle="Italic" FontWeight="Bold"/>
+        <TextBox Name="txfNombreEmp" HorizontalAlignment="Left" Margin="173,341,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Height="22"/>
+        <TextBox Name="txfDirEmp" HorizontalAlignment="Left" Margin="188,422,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="276" Height="22"/>
+        <TextBox Name="txfLocalidadEmp" HorizontalAlignment="Left" Margin="188,496,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Height="22"/>
+        <TextBox Name="txfCorreoEmp" HorizontalAlignment="Left" Margin="159,659,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="243" Height="22"/>
+        <TextBox Name="txfCPEmp" HorizontalAlignment="Left" Margin="397,494,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="67" Height="22"/>
+        <ComboBox Name="cbJornadaEmp" HorizontalAlignment="Left" Margin="159,579,0,0" VerticalAlignment="Top" Width="120" Height="24"/>
+        <ComboBox Name="cbModalidadEmp" HorizontalAlignment="Left" Margin="419,580,0,0" VerticalAlignment="Top" Width="119" Height="24"/>
+        <TextBox Name="txfCifEmp" HorizontalAlignment="Left" Margin="397,341,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="94" Height="22" RenderTransformOrigin="0.177,0.704"/>
+        <Rectangle HorizontalAlignment="Left" Height="482" Margin="312,880,0,0" Stroke="Black" VerticalAlignment="Top" Width="490"/>
+        <Label Content="DATOS DEL TUTOR LEGAL" HorizontalAlignment="Left" Margin="433,914,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Bahnschrift" FontStyle="Italic" FontWeight="Bold"/>
+        <Label Content="Cod. del Tutor:" HorizontalAlignment="Left" Margin="317,999,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift"/>
+        <Label Content="DNI:" HorizontalAlignment="Left" Margin="317,1065,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift" RenderTransformOrigin="0.613,1.163"/>
+        <Label Content="Nombre:" HorizontalAlignment="Left" Margin="317,1116,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift" RenderTransformOrigin="0.68,2.014"/>
+        <Label Content="Apellidos:" HorizontalAlignment="Left" Margin="317,1168,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift" RenderTransformOrigin="0.68,2.014"/>
+        <Label Content="Teléfono" HorizontalAlignment="Left" Margin="317,1231,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift" RenderTransformOrigin="0.68,2.014"/>
+        <Label Content="Cod. del Representante:" HorizontalAlignment="Left" Margin="546,999,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift"/>
+        <Label Content="DNI:" HorizontalAlignment="Left" Margin="548,1065,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift" RenderTransformOrigin="0.613,1.163"/>
+        <Label Content="Nombre:" HorizontalAlignment="Left" Margin="548,1116,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift" RenderTransformOrigin="0.68,2.014"/>
+        <Label Content="Apellidos:" HorizontalAlignment="Left" Margin="548,1168,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift" RenderTransformOrigin="0.68,2.014"/>
+        <TextBox Name="txfDniTutor" HorizontalAlignment="Left" Margin="402,1067,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="94" Height="22"/>
+        <TextBox Name="txfNombreTutor" HorizontalAlignment="Left" Margin="402,1118,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="94" Height="22"/>
+        <TextBox Name="txfApellidosTutor" HorizontalAlignment="Left" Margin="402,1170,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="94" Height="22"/>
+        <TextBox Name="txfTlfTutor" HorizontalAlignment="Left" Margin="402,1233,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="94" Height="22"/>
+        <TextBox Name="txfNombreRp" HorizontalAlignment="Left" Margin="633,1118,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="94" Height="22"/>
+        <TextBox Name="txfApellidosRp" HorizontalAlignment="Left" Margin="633,1170,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="94" Height="22"/>
+        <TextBox Name="txfDniRp" HorizontalAlignment="Left" Margin="633,1067,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="94" Height="22"/>
+        <TextBox Name="txfCodTutor" HorizontalAlignment="Left" Margin="429,1001,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="51" Height="22"/>
+        <TextBox Name="txfCodRp" HorizontalAlignment="Left" Margin="706,1001,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="51" Height="22"/>
+        <TextBox Name="txfCodEmp" HorizontalAlignment="Left" Margin="218,246,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50" Height="22"/>
+    </Grid>
+</Window>
