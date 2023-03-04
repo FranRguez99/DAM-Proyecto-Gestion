@@ -23,5 +23,7 @@ namespace DDI_GestionEmpresa.Vista
         {
             InitializeComponent();
         }
+
+      
     }
 }

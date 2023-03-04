@@ -6,47 +6,176 @@
         xmlns:local="clr-namespace:DDI_GestionEmpresa.Vista"
         mc:Ignorable="d"
         Title="FormularioEmpresas" Height="auto" Width="auto" SizeToContent="WidthAndHeight">
-    <Grid Name="gridDatosEmpresa" Grid.ColumnSpan="3" Margin="-10,19,10,-10">
-        <Label Content="GESTOR DE DATOS ALUMNOS EN PRÁCTICAS" HorizontalAlignment="Left" Margin="48,67,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift" FontSize="28" FontWeight="Bold" FontStyle="Italic" Grid.Column="2"/>
-        <Rectangle HorizontalAlignment="Left" Height="607" Margin="67,153,0,0" Stroke="Black" VerticalAlignment="Top" Width="490" Grid.ColumnSpan="3"/>
-        <Label Content="Modalidad:" HorizontalAlignment="Left" Margin="318,577,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.974,0.673" FontSize="14" FontFamily="Bahnschrift"/>
-        <Label Content="Mail:" HorizontalAlignment="Left" Margin="87,657,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift"/>
-        <Label Content="Nombre:" HorizontalAlignment="Left" Margin="87,341,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift"/>
-        <Label Content="Cod de la Empresa:" HorizontalAlignment="Left" Margin="74,244,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift"/>
-        <Label Content="Jornada:" HorizontalAlignment="Left" Margin="83,579,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift"/>
-        <Label Content="Localidad:" HorizontalAlignment="Left" Margin="87,494,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift"/>
-        <Label Content="C.P:" HorizontalAlignment="Left" Margin="334,494,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift"/>
-        <Label Content="Dirección:" HorizontalAlignment="Left" Margin="83,420,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift"/>
-        <Label Content="CIF:" HorizontalAlignment="Left" Margin="334,341,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift"/>
-        <Label Content="DATOS DE LA EMPRESA" HorizontalAlignment="Left" Margin="210,177,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Bahnschrift" FontStyle="Italic" FontWeight="Bold"/>
-        <TextBox Name="txfNombreEmp" HorizontalAlignment="Left" Margin="173,341,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Height="22"/>
-        <TextBox Name="txfDirEmp" HorizontalAlignment="Left" Margin="188,422,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="276" Height="22"/>
-        <TextBox Name="txfLocalidadEmp" HorizontalAlignment="Left" Margin="188,496,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Height="22"/>
-        <TextBox Name="txfCorreoEmp" HorizontalAlignment="Left" Margin="159,659,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="243" Height="22"/>
-        <TextBox Name="txfCPEmp" HorizontalAlignment="Left" Margin="397,494,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="67" Height="22"/>
-        <ComboBox Name="cbJornadaEmp" HorizontalAlignment="Left" Margin="159,579,0,0" VerticalAlignment="Top" Width="120" Height="24"/>
-        <ComboBox Name="cbModalidadEmp" HorizontalAlignment="Left" Margin="419,580,0,0" VerticalAlignment="Top" Width="119" Height="24"/>
-        <TextBox Name="txfCifEmp" HorizontalAlignment="Left" Margin="397,341,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="94" Height="22" RenderTransformOrigin="0.177,0.704"/>
-        <Rectangle HorizontalAlignment="Left" Height="482" Margin="312,880,0,0" Stroke="Black" VerticalAlignment="Top" Width="490"/>
-        <Label Content="DATOS DEL TUTOR LEGAL" HorizontalAlignment="Left" Margin="433,914,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Bahnschrift" FontStyle="Italic" FontWeight="Bold"/>
-        <Label Content="Cod. del Tutor:" HorizontalAlignment="Left" Margin="317,999,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift"/>
-        <Label Content="DNI:" HorizontalAlignment="Left" Margin="317,1065,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift" RenderTransformOrigin="0.613,1.163"/>
-        <Label Content="Nombre:" HorizontalAlignment="Left" Margin="317,1116,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift" RenderTransformOrigin="0.68,2.014"/>
-        <Label Content="Apellidos:" HorizontalAlignment="Left" Margin="317,1168,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift" RenderTransformOrigin="0.68,2.014"/>
-        <Label Content="Teléfono" HorizontalAlignment="Left" Margin="317,1231,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift" RenderTransformOrigin="0.68,2.014"/>
-        <Label Content="Cod. del Representante:" HorizontalAlignment="Left" Margin="546,999,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift"/>
-        <Label Content="DNI:" HorizontalAlignment="Left" Margin="548,1065,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift" RenderTransformOrigin="0.613,1.163"/>
-        <Label Content="Nombre:" HorizontalAlignment="Left" Margin="548,1116,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift" RenderTransformOrigin="0.68,2.014"/>
-        <Label Content="Apellidos:" HorizontalAlignment="Left" Margin="548,1168,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift" RenderTransformOrigin="0.68,2.014"/>
-        <TextBox Name="txfDniTutor" HorizontalAlignment="Left" Margin="402,1067,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="94" Height="22"/>
-        <TextBox Name="txfNombreTutor" HorizontalAlignment="Left" Margin="402,1118,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="94" Height="22"/>
-        <TextBox Name="txfApellidosTutor" HorizontalAlignment="Left" Margin="402,1170,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="94" Height="22"/>
-        <TextBox Name="txfTlfTutor" HorizontalAlignment="Left" Margin="402,1233,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="94" Height="22"/>
-        <TextBox Name="txfNombreRp" HorizontalAlignment="Left" Margin="633,1118,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="94" Height="22"/>
-        <TextBox Name="txfApellidosRp" HorizontalAlignment="Left" Margin="633,1170,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="94" Height="22"/>
-        <TextBox Name="txfDniRp" HorizontalAlignment="Left" Margin="633,1067,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="94" Height="22"/>
-        <TextBox Name="txfCodTutor" HorizontalAlignment="Left" Margin="429,1001,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="51" Height="22"/>
-        <TextBox Name="txfCodRp" HorizontalAlignment="Left" Margin="706,1001,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="51" Height="22"/>
-        <TextBox Name="txfCodEmp" HorizontalAlignment="Left" Margin="218,246,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="50" Height="22"/>
+    <Grid Height="625" Width="800">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Vista/fondo.jpg"/>
+        </Grid.Background>
+
+        <Label Content="GESTIÓN DE DATOS DE EMPRESAS" Margin="0,20,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center"/>
+        <Label Content="Cod Empresa:" HorizontalAlignment="Left" Margin="40,100,0,0" VerticalAlignment="Top" FontSize="16" Foreground="Black" FontWeight="Bold" FontFamily="Bahnschrift SemiBold" Width="110"/>
+        <TextBox x:Name="tfCodEmpresa" HorizontalAlignment="Left" Margin="150,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" Height="30" FontSize="16" VerticalContentAlignment="Center">
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFB5B5B5" Offset="1"/>
+                    <GradientStop Color="White" Offset="0"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <Label Content="CIF:" HorizontalAlignment="Left" Margin="210,100,0,0" VerticalAlignment="Top" FontSize="16" Foreground="Black" FontWeight="Bold" FontFamily="Bahnschrift SemiBold" Width="36"/>
+        <TextBox x:Name="tfCIF" HorizontalAlignment="Left" Margin="246,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" Height="30" FontSize="16" VerticalContentAlignment="Center">
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFB5B5B5" Offset="1"/>
+                    <GradientStop Color="White" Offset="0"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <Label Content="Nombre:" HorizontalAlignment="Left" Margin="356,100,0,0" VerticalAlignment="Top" FontSize="16" Foreground="Black" FontWeight="Bold" FontFamily="Bahnschrift SemiBold" Width="71"/>
+        <TextBox x:Name="tfNombreEmpresa" HorizontalAlignment="Left" Margin="427,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="333" Height="30" FontSize="16" VerticalContentAlignment="Center">
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFB5B5B5" Offset="1"/>
+                    <GradientStop Color="White" Offset="0"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <Label Content="Dirección:" HorizontalAlignment="Left" Margin="40,160,0,0" VerticalAlignment="Top" FontSize="16" Foreground="Black" FontWeight="Bold" FontFamily="Bahnschrift SemiBold" Width="81"/>
+        <TextBox x:Name="tfDireccion" HorizontalAlignment="Left" Margin="121,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="30" FontSize="16" VerticalContentAlignment="Center">
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFB5B5B5" Offset="1"/>
+                    <GradientStop Color="White" Offset="0"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <Label Content="Cod Postal:" HorizontalAlignment="Left" Margin="281,160,0,0" VerticalAlignment="Top" FontSize="16" Foreground="Black" FontWeight="Bold" FontFamily="Bahnschrift SemiBold" Width="90"/>
+        <TextBox x:Name="tfCodPostal" HorizontalAlignment="Left" Margin="371,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="79" Height="30" FontSize="16" VerticalContentAlignment="Center">
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFB5B5B5" Offset="1"/>
+                    <GradientStop Color="White" Offset="0"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <Label Content="Localidad:" HorizontalAlignment="Left" Margin="460,160,0,0" VerticalAlignment="Top" FontSize="16" Foreground="Black" FontWeight="Bold" FontFamily="Bahnschrift SemiBold" Width="83"/>
+        <TextBox x:Name="tfLocalidad" HorizontalAlignment="Left" Margin="543,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="217" Height="30" FontSize="16" VerticalContentAlignment="Center">
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFB5B5B5" Offset="1"/>
+                    <GradientStop Color="White" Offset="0"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <Label Content="Jornada:" HorizontalAlignment="Left" Margin="40,220,0,0" VerticalAlignment="Top" FontSize="16" Foreground="Black" FontWeight="Bold" FontFamily="Bahnschrift SemiBold" Width="72"/>
+        <ComboBox x:Name="cbJornada" HorizontalAlignment="Left" Margin="112,220,0,0" VerticalAlignment="Top" FontSize="16" Width="100" Height="30">
+            <ComboBoxItem Content="Partida"/>
+            <ComboBoxItem Content="Continua"/>
+        </ComboBox>
+        <Label Content="Modalidad:" HorizontalAlignment="Left" Margin="222,220,0,0" VerticalAlignment="Top" FontSize="16" Foreground="Black" FontWeight="Bold" FontFamily="Bahnschrift SemiBold" Width="87"/>
+        <ComboBox x:Name="cbModalidad" HorizontalAlignment="Left" Margin="309,220,0,0" VerticalAlignment="Top" FontSize="16" Width="120" Height="30">
+            <ComboBoxItem Content="Presencial"/>
+            <ComboBoxItem Content="Semipresencial"/>
+            <ComboBoxItem Content="Distancia"/>
+        </ComboBox>
+        <Label Content="Mail:" HorizontalAlignment="Left" Margin="439,220,0,0" VerticalAlignment="Top" FontSize="16" Foreground="Black" FontWeight="Bold" FontFamily="Bahnschrift SemiBold" Width="44"/>
+        <TextBox x:Name="tfMail" HorizontalAlignment="Left" Margin="483,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="277" Height="30" FontSize="16" VerticalContentAlignment="Center">
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFB5B5B5" Offset="1"/>
+                    <GradientStop Color="White" Offset="0"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <GroupBox Visibility="Visible" BorderBrush="Black" BorderThickness="1" Margin="20,71,20,360" Header="Empresa"/>
+        <Label Content="DNI RL:" HorizontalAlignment="Left" Margin="40,340,0,0" VerticalAlignment="Top" FontSize="16" Foreground="Black" FontWeight="Bold" FontFamily="Bahnschrift SemiBold" Width="64"/>
+        <TextBox x:Name="tfDNIRL" HorizontalAlignment="Left" Margin="104,340,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" Height="30" FontSize="16" VerticalContentAlignment="Center">
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFB5B5B5" Offset="1"/>
+                    <GradientStop Color="White" Offset="0"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <Label Content="Nombre RL:" HorizontalAlignment="Left" Margin="204,340,0,0" VerticalAlignment="Top" FontSize="16" Foreground="Black" FontWeight="Bold" FontFamily="Bahnschrift SemiBold" Width="95"/>
+        <TextBox x:Name="tfNombreRL" HorizontalAlignment="Left" Margin="299,340,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="30" FontSize="16" VerticalContentAlignment="Center">
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFB5B5B5" Offset="1"/>
+                    <GradientStop Color="White" Offset="0"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <Label Content="Apellidos RL:" HorizontalAlignment="Left" Margin="460,340,0,0" VerticalAlignment="Top" FontSize="16" Foreground="Black" FontWeight="Bold" FontFamily="Bahnschrift SemiBold" Width="105"/>
+        <TextBox x:Name="tfApellidosRL" HorizontalAlignment="Left" Margin="565,340,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="195" Height="30" FontSize="16" VerticalContentAlignment="Center">
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFB5B5B5" Offset="1"/>
+                    <GradientStop Color="White" Offset="0"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <Label Content="DNI TL:" HorizontalAlignment="Left" Margin="40,400,0,0" VerticalAlignment="Top" FontSize="16" Foreground="Black" FontWeight="Bold" FontFamily="Bahnschrift SemiBold" Width="64"/>
+        <TextBox x:Name="tfDNITL" HorizontalAlignment="Left" Margin="104,400,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" Height="30" FontSize="16" VerticalContentAlignment="Center">
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFB5B5B5" Offset="1"/>
+                    <GradientStop Color="White" Offset="0"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <Label Content="Nombre TL:" HorizontalAlignment="Left" Margin="204,400,0,0" VerticalAlignment="Top" FontSize="16" Foreground="Black" FontWeight="Bold" FontFamily="Bahnschrift SemiBold" Width="95"/>
+        <TextBox x:Name="tfNombreTL" HorizontalAlignment="Left" Margin="299,400,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="30" FontSize="16" VerticalContentAlignment="Center">
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFB5B5B5" Offset="1"/>
+                    <GradientStop Color="White" Offset="0"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <Label Content="Apellidos TL:" HorizontalAlignment="Left" Margin="460,400,0,0" VerticalAlignment="Top" FontSize="16" Foreground="Black" FontWeight="Bold" FontFamily="Bahnschrift SemiBold" Width="105"/>
+        <TextBox x:Name="tfApellidosTL" HorizontalAlignment="Left" Margin="565,400,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="195" Height="30" FontSize="16" VerticalContentAlignment="Center">
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFB5B5B5" Offset="1"/>
+                    <GradientStop Color="White" Offset="0"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <Label Content="Teléfono TL:" HorizontalAlignment="Left" Margin="40,460,0,0" VerticalAlignment="Top" FontSize="16" Foreground="Black" FontWeight="Bold" FontFamily="Bahnschrift SemiBold" Width="95"/>
+        <TextBox x:Name="tfTelefonoTL" HorizontalAlignment="Left" Margin="135,460,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="104" Height="30" FontSize="16" VerticalContentAlignment="Center">
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFB5B5B5" Offset="1"/>
+                    <GradientStop Color="White" Offset="0"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <GroupBox Visibility="Visible" BorderBrush="Black" BorderThickness="1" Margin="20,309,20,122" Header="Responsable legal y tutor laboral"/>
+        <Button x:Name="btnAceptar" HorizontalAlignment="Center" Margin="-350,540,0,0" VerticalAlignment="Top" Height="50" Width="150" FontFamily="Bahnschrift" FontSize="24" Foreground="Black" BorderBrush="#FFB5B5B5" Content="ACEPTAR">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFB5B5B5" Offset="1"/>
+                    <GradientStop Color="White" Offset="0"/>
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="btnCancelar" HorizontalAlignment="Center" Margin="350,540,0,0" VerticalAlignment="Top" Height="50" Width="150" FontFamily="Bahnschrift" FontSize="24" Foreground="Black" BorderBrush="#FFB5B5B5" Content="CANCELAR">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFB5B5B5" Offset="1"/>
+                    <GradientStop Color="White" Offset="0"/>
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
     </Grid>
 </Window>
