@@ -23,12 +23,21 @@ namespace DDI_GestionEmpresa.Vista
 
         // Atributos
         private AlumnoCRUD alumnoCRUD;
+        private EmpresaCRUD empresaCRUD;
+        private List<Empresa> listaEmpresas;
+        public Empresa empresaSeleccionada;
         private TutorCRUD tutorCRUD;
         public VentanaPrincipal()
-        {
+        {   
             InitializeComponent();
             alumnoCRUD= new AlumnoCRUD();
+            empresaCRUD= new EmpresaCRUD();
+            listaEmpresas= new List<Empresa>();
             tutorCRUD = new TutorCRUD();
+
+            cargarEmpresas();
+
+            
         }
 
         private void VentanaPrincipal_Loaded(object sender, RoutedEventArgs e)
@@ -38,6 +47,64 @@ namespace DDI_GestionEmpresa.Vista
         }
 
         // Pestaña empresas
+
+        /// <summary>
+        /// Carga las empresas almacenadas en nuestra base de datos en la tabla
+        /// </summary>
+        private void cargarEmpresas()
+        {
+            // Vaciamos la tabla por si estuviera previamente cargada
+            tablaEmpresas.Items.Clear();
+            tablaEmpresas.Items.Refresh();
+
+            // Inicializamos una lista con las empresas registradas en nuestra BBDD
+            listaEmpresas.Clear();
+            listaEmpresas = empresaCRUD.GetAllEmpresas();
+
+            // Recorremos la lista para ir añadiendola a la tabla
+            for (int i = 0; i < listaEmpresas.Count(); i++)
+            {
+                tablaEmpresas.Items.Add(new Empresa
+                (
+                    listaEmpresas[i].idEmpresa,
+                    listaEmpresas[i].cif,
+                    listaEmpresas[i].nombre,
+                    listaEmpresas[i].direccion,
+                    listaEmpresas[i].codPostal,
+                    listaEmpresas[i].localidad,
+                    listaEmpresas[i].jornada,
+                    listaEmpresas[i].modalidad,
+                    listaEmpresas[i].mail,
+                    listaEmpresas[i].dniRepLegal,
+                    listaEmpresas[i].nombreRepLegal,
+                    listaEmpresas[i].apellidoRepLegal,
+                    listaEmpresas[i].dniTutLab,
+                    listaEmpresas[i].nombreTutLab,
+                    listaEmpresas[i].apellidoTutLab,
+                    listaEmpresas[i].telefonoTutLab
+                ));
+            }
+        }
+
+        /// <summary>
+        /// Crea un objeto empresa a partir del seleccionado en la lista
+        /// </summary>
+
+        private void tablaEmpresas_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            empresaSeleccionada = (Empresa)tablaEmpresas.SelectedItem;
+        }
+
+        /// <summary>
+        /// Lanza una ventana para la creación de un nuevo formulario
+        /// </summary>
+        private void btnInsertar_Click(object sender, RoutedEventArgs e)
+        {
+            FormularioEmpresas formularioEmpresas = new FormularioEmpresas(false);
+            formularioEmpresas.ShowDialog();
+            
+        }
+
 
         // Pestaña alumnos
 
@@ -215,6 +282,10 @@ namespace DDI_GestionEmpresa.Vista
             tfEmailTutor.Text = "";
             tfTlfTutor.Text = "";
         }
+
+        
+
+
 
         // Pestaña asignación
 
