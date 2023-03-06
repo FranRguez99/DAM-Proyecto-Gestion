@@ -27,12 +27,16 @@ namespace DDI_GestionEmpresa.Vista
         public Empresa empresaSeleccionada;
         private TutorCRUD tutorCRUD;
         public VentanaPrincipal()
-        {
+        {   
             InitializeComponent();
             alumnoCRUD= new AlumnoCRUD();
             empresaCRUD= new EmpresaCRUD();
             listaEmpresas= new List<Empresa>();
             tutorCRUD = new TutorCRUD();
+
+            cargarEmpresas();
+
+            
         }
 
         private void VentanaPrincipal_Loaded(object sender, RoutedEventArgs e)
@@ -97,6 +101,7 @@ namespace DDI_GestionEmpresa.Vista
         {
             FormularioEmpresas formularioEmpresas = new FormularioEmpresas(false);
             formularioEmpresas.ShowDialog();
+            
         }
 
 

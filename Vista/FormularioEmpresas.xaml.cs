@@ -23,7 +23,9 @@ namespace DDI_GestionEmpresa.Vista
         private Empresa empresa;
         private EmpresaCRUD empresaCRUD;
         bool editar;
+        bool valido = true;
 
+        // Constructores
         public FormularioEmpresas(bool editar)
         {
             InitializeComponent();
@@ -39,21 +41,71 @@ namespace DDI_GestionEmpresa.Vista
             this.editar = editar;
         }
 
+        // Métodos
+
+        /// <summary>
+        /// Crea un objeto empresa a partir de los campos de nuestro formulario
+        /// </summary>
         public void leerEmpresa()
         {
-            
+            // Comprobamos los campos
+
+            if (valido)
+            {
                 empresa = new Empresa(
-                    int.Parse(tfCodEmpresa.Text), tfCIF.Text, tfNombreEmpresa.Text,
-                    tfDireccion.Text, tfCodPostal.Text, tfLocalidad.Text, cbJornada.SelectedItem.ToString(),
-                    cbModalidad.SelectedItem.ToString(), tfMail.Text, tfDNIRL.Text, tfNombreRL.Text, tfApellidosRL.Text,
-                    tfDNITL.Text, tfNombreTL.Text, tfApellidosTL.Text, tfTelefonoTL.Text
+                    tfCIF.Text, tfNombreEmpresa.Text, tfDireccion.Text, tfCodPostal.Text,
+                    tfLocalidad.Text, (cbJornada.SelectedItem as ComboBoxItem)?.Content.ToString(),
+                    (cbModalidad.SelectedItem as ComboBoxItem)?.Content.ToString(), tfMail.Text,
+                    tfDNIRL.Text, tfNombreRL.Text, tfApellidosRL.Text, tfDNITL.Text, tfNombreTL.Text,
+                    tfApellidosTL.Text, tfTelefonoTL.Text
                     );
+            }
                 
-            
-            
-           
         }
 
+        /// <summary>
+        /// Limita campos de texto a 5
+        /// </summary>
+        public void TextBoxLimite5(object sender, EventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            if (textBox != null && textBox.Text.Length > 5)
+            {
+                textBox.Text = textBox.Text.Substring(0, 5);
+                textBox.SelectionStart = 5;
+            }
+        }
+
+        /// <summary>
+        /// Limita campos de texto a 9
+        /// </summary>
+        public void TextBoxLimite9(object sender, EventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            if (textBox != null && textBox.Text.Length > 9)
+            {
+                textBox.Text = textBox.Text.Substring(0, 9);
+                textBox.SelectionStart = 9;
+            }
+        }
+
+        /// <summary>
+        /// Limita campos de texto a 50
+        /// </summary>
+        public void TextBoxLimite50(object sender, EventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            if (textBox != null && textBox.Text.Length > 50)
+            {
+                textBox.Text = textBox.Text.Substring(0, 50);
+                textBox.SelectionStart = 50;
+            }
+        }
+
+
+        /// <summary>
+        /// Acepta la operación de inserción o modificación de una empresa en la BBDD
+        /// </summary>
         private void btnAceptar_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -61,7 +113,7 @@ namespace DDI_GestionEmpresa.Vista
                 leerEmpresa();
                 empresaCRUD.InsertEmpresa(empresa);
                 MessageBox.Show("Empresa insertada con éxito", "EMPRESA INSERTADA",
-                    MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBoxButton.OK, MessageBoxImage.Information);
 
                 // Cerramos la ventana
                 Button button = (Button)sender;
@@ -69,17 +121,14 @@ namespace DDI_GestionEmpresa.Vista
                 window.Close();
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Algunos de los campos son erroneos.\n" +
                     "No se ha podido insertar la empresa", "Error",
                     MessageBoxButton.OK, MessageBoxImage.Error);
 
             }
-
-
         }
 
-        
     }
 }
