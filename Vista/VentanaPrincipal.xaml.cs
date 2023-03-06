@@ -22,11 +22,16 @@ namespace DDI_GestionEmpresa.Vista
 
         // Atributos
         private AlumnoCRUD alumnoCRUD;
+        private EmpresaCRUD empresaCRUD;
+        private List<Empresa> listaEmpresas;
+        public Empresa empresaSeleccionada;
         private TutorCRUD tutorCRUD;
         public VentanaPrincipal()
         {
             InitializeComponent();
             alumnoCRUD= new AlumnoCRUD();
+            empresaCRUD= new EmpresaCRUD();
+            listaEmpresas= new List<Empresa>();
             tutorCRUD = new TutorCRUD();
         }
 
@@ -37,6 +42,41 @@ namespace DDI_GestionEmpresa.Vista
         }
 
         // Pestaña empresas
+        private void cargarEmpresas()
+        {
+            tablaEmpresas.Items.Clear();
+            tablaEmpresas.Items.Refresh();
+            listaEmpresas.Clear();
+            listaEmpresas = empresaCRUD.GetAllEmpresas();
+
+            for (int i = 0; i < listaEmpresas.Count(); i++)
+            {
+                tablaEmpresas.Items.Add(new Empresa
+                (
+                    listaEmpresas[i].idEmpresa,
+                    listaEmpresas[i].cif,
+                    listaEmpresas[i].nombre,
+                    listaEmpresas[i].direccion,
+                    listaEmpresas[i].codPostal,
+                    listaEmpresas[i].localidad,
+                    listaEmpresas[i].jornada,
+                    listaEmpresas[i].modalidad,
+                    listaEmpresas[i].mail,
+                    listaEmpresas[i].dniRepLegal,
+                    listaEmpresas[i].nombreRepLegal,
+                    listaEmpresas[i].apellidoRepLegal,
+                    listaEmpresas[i].dniTutLab,
+                    listaEmpresas[i].nombreTutLab,
+                    listaEmpresas[i].apellidoTutLab,
+                    listaEmpresas[i].telefonoTutLab
+                ));
+            }
+        }
+
+        private void tablaEmpresas_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            empresaSeleccionada = (Empresa)tablaEmpresas.SelectedItem;
+        }
 
         // Pestaña alumnos
 
@@ -183,6 +223,8 @@ namespace DDI_GestionEmpresa.Vista
             tfEmailTutor.Text = "";
             tfTlfTutor.Text = "";
         }
+
+        
 
         // Pestaña asignación
 
