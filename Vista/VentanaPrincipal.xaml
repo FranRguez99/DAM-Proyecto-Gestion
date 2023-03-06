@@ -68,7 +68,10 @@
                 </Grid>
             </TabItem>
             <TabItem Header="Alumnos">
-                <Grid Background="#FFE5E5E5" Height="600" Width="800">
+                <Grid Height="600" Width="800">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/Vista/fondo.jpg"/>
+                    </Grid.Background>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="43*"/>
                         <RowDefinition Height="557*"/>
@@ -77,21 +80,98 @@
                         <ColumnDefinition Width="17*"/>
                         <ColumnDefinition Width="383*"/>
                     </Grid.ColumnDefinitions>
-                    <DataGrid IsReadOnly="True" SelectedCellsChanged="tablaAlumno_SelectedCellsChanged" x:Name="tablaAlumno" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="308,91,63,182" Grid.Column="1" Grid.Row="1"/>
+                    <DataGrid IsReadOnly="True" SelectedCellsChanged="tablaAlumno_SelectedCellsChanged" x:Name="tablaAlumno" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="308,91,63,182" Grid.Column="1" Grid.Row="1">
+                        <DataGrid.Background>
+                            <ImageBrush ImageSource="/Vista/fondo.jpg"/>
+                        </DataGrid.Background>
+                    </DataGrid>
                     <Label Content="GESTOR DE LOS ALUMNOS " HorizontalAlignment="Left" Margin="183,7,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift" FontSize="28" FontWeight="Bold" FontStyle="Italic" RenderTransformOrigin="0.541,0.516" Grid.Column="1" Grid.Row="1"/>
                     <Label Content="Nombre:" HorizontalAlignment="Left" Margin="18,169,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift" Grid.Column="1" Grid.Row="1"/>
                     <Label Content="Cod del Alumno:" HorizontalAlignment="Left" Margin="7,78,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift" Grid.Column="1" Grid.Row="1"/>
-                    <TextBox x:Name="tfNombreAlumno" HorizontalAlignment="Left" Margin="107,169,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Height="22" Grid.Column="1" Grid.Row="1"/>
+                    <TextBox x:Name="tfNombreAlumno" HorizontalAlignment="Left" Margin="107,169,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Height="22" Grid.Column="1" Grid.Row="1">
+                        <TextBox.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFB5B5B5" Offset="1"/>
+                                <GradientStop Color="White" Offset="0"/>
+                            </LinearGradientBrush>
+                        </TextBox.Background>
+                    </TextBox>
                     <Label Content="DNI:" HorizontalAlignment="Left" Margin="22,244,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift" RenderTransformOrigin="0.613,1.163" Grid.Column="1" Grid.Row="1"/>
                     <Label Content="Apellidos:" HorizontalAlignment="Left" Margin="22,325,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift" RenderTransformOrigin="0.68,2.014" Grid.Column="1" Grid.Row="1"/>
-                    <TextBox x:Name="tfDniAlumno" HorizontalAlignment="Left" Margin="107,246,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="94" Height="22" Grid.Column="1" Grid.Row="1"/>
-                    <TextBox x:Name="tfApellidosAlumno" HorizontalAlignment="Left" Margin="107,327,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="94" Height="22" RenderTransformOrigin="0.272,2.04" Grid.Column="1" Grid.Row="1"/>
-                    <TextBox x:Name="tfCodAlumno" HorizontalAlignment="Left" Margin="143,80,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="51" Height="22" Grid.Column="1" Grid.Row="1"/>
+                    <TextBox x:Name="tfDniAlumno" HorizontalAlignment="Left" Margin="107,246,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="94" Height="22" Grid.Column="1" Grid.Row="1">
+                        <TextBox.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFB5B5B5" Offset="1"/>
+                                <GradientStop Color="White" Offset="0"/>
+                            </LinearGradientBrush>
+                        </TextBox.Background>
+                    </TextBox>
+
+                    <TextBox x:Name="tfApellidosAlumno" HorizontalAlignment="Left" Margin="107,327,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="94" Height="22" RenderTransformOrigin="0.272,2.04" Grid.Column="1" Grid.Row="1">
+                        <TextBox.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFB5B5B5" Offset="1"/>
+                                <GradientStop Color="White" Offset="0"/>
+                            </LinearGradientBrush>
+                        </TextBox.Background>
+                    </TextBox>
+                    <TextBox x:Name="tfCodAlumno" HorizontalAlignment="Left" Margin="143,80,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="51" Height="22" Grid.Column="1" Grid.Row="1">
+                        <TextBox.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFB5B5B5" Offset="1"/>
+                                <GradientStop Color="White" Offset="0"/>
+                            </LinearGradientBrush>
+                        </TextBox.Background>
+                    </TextBox>
                     <Label Content="Fecha Nac.:" HorizontalAlignment="Left" Margin="22,403,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift" RenderTransformOrigin="0.68,2.014" Grid.Column="1" Grid.Row="1"/>
-                    <DatePicker SelectedDateFormat="Short" x:Name="dpFechaNacAlumno" HorizontalAlignment="Left" Margin="107,403,0,0" VerticalAlignment="Top" Width="149" Grid.Column="1" Grid.Row="1"/>
-                    <Button Name="btInsertAlumn" Content="AÑADIR" HorizontalAlignment="Left" Margin="308,449,0,0" VerticalAlignment="Top" Height="41" Width="123" Click="btInsertAlumn_Click" Grid.Column="1" Grid.Row="1"/>
-                    <Button Name="btElimAlumn" Content="ELIMINAR" HorizontalAlignment="Left" Margin="580,449,0,0" VerticalAlignment="Top" Height="41" Width="123" Click="btElimAlumn_Click" Grid.Column="1" Grid.Row="1" />
-                    <Button Name="btModiAlumn" Content="MODIFICAR" HorizontalAlignment="Left" Margin="444,449,0,0" VerticalAlignment="Top" Height="41" Width="123" Click="btModiAlumn_Click" Grid.Column="1" Grid.Row="1"/>
+                    <DatePicker SelectedDateFormat="Short" x:Name="dpFechaNacAlumno" HorizontalAlignment="Left" Margin="107,403,0,0" VerticalAlignment="Top" Width="149" Grid.Column="1" Grid.Row="1">
+                        <DatePicker.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFB5B5B5" Offset="1"/>
+                                <GradientStop Color="White" Offset="0"/>
+                            </LinearGradientBrush>
+                        </DatePicker.Background>
+                    </DatePicker>
+                    <Button x:Name="btCreaAlumn" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="39" Width="132" FontFamily="Bahnschrift" FontSize="24" Foreground="Black" BorderBrush="#FFB5B5B5" Content="AÑADIR" Grid.Column="1" Margin="294,450,0,0" Grid.Row="1">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFB5B5B5" Offset="1"/>
+                                <GradientStop Color="White" Offset="0"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="10"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button x:Name="btModiAlumn" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="39" Width="132" FontFamily="Bahnschrift" FontSize="24" Foreground="Black" BorderBrush="#FFB5B5B5" Content="MODIFICAR" Grid.Column="1" Margin="440,450,0,0" Grid.Row="1">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFB5B5B5" Offset="1"/>
+                                <GradientStop Color="White" Offset="0"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="10"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button x:Name="btElimAlumn" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="39" Width="132" FontFamily="Bahnschrift" FontSize="24" Foreground="Black" BorderBrush="#FFB5B5B5" Content="ELIMINAR" Grid.Column="1" Margin="584,450,0,0" Grid.Row="1">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFB5B5B5" Offset="1"/>
+                                <GradientStop Color="White" Offset="0"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="10"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+
                 </Grid>
             </TabItem>
             <TabItem Header="Tutores">
