@@ -42,13 +42,21 @@ namespace DDI_GestionEmpresa.Vista
         }
 
         // Pestaña empresas
+
+        /// <summary>
+        /// Carga las empresas almacenadas en nuestra base de datos en la tabla
+        /// </summary>
         private void cargarEmpresas()
         {
+            // Vaciamos la tabla por si estuviera previamente cargada
             tablaEmpresas.Items.Clear();
             tablaEmpresas.Items.Refresh();
+
+            // Inicializamos una lista con las empresas registradas en nuestra BBDD
             listaEmpresas.Clear();
             listaEmpresas = empresaCRUD.GetAllEmpresas();
 
+            // Recorremos la lista para ir añadiendola a la tabla
             for (int i = 0; i < listaEmpresas.Count(); i++)
             {
                 tablaEmpresas.Items.Add(new Empresa
@@ -73,10 +81,24 @@ namespace DDI_GestionEmpresa.Vista
             }
         }
 
+        /// <summary>
+        /// Crea un objeto empresa a partir del seleccionado en la lista
+        /// </summary>
+
         private void tablaEmpresas_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             empresaSeleccionada = (Empresa)tablaEmpresas.SelectedItem;
         }
+
+        /// <summary>
+        /// Lanza una ventana para la creación de un nuevo formulario
+        /// </summary>
+        private void btnInsertar_Click(object sender, RoutedEventArgs e)
+        {
+            FormularioEmpresas formularioEmpresas = new FormularioEmpresas(false);
+            formularioEmpresas.ShowDialog();
+        }
+
 
         // Pestaña alumnos
 
@@ -225,6 +247,8 @@ namespace DDI_GestionEmpresa.Vista
         }
 
         
+
+
 
         // Pestaña asignación
 

@@ -151,7 +151,7 @@
             </TextBox.Background>
         </TextBox>
         <GroupBox Visibility="Visible" BorderBrush="Black" BorderThickness="1" Margin="20,309,20,122" Header="Responsable legal y tutor laboral"/>
-        <Button x:Name="btnAceptar" HorizontalAlignment="Center" Margin="-350,540,0,0" VerticalAlignment="Top" Height="50" Width="150" FontFamily="Bahnschrift" FontSize="24" Foreground="Black" BorderBrush="#FFB5B5B5" Content="ACEPTAR">
+        <Button x:Name="btnAceptar" HorizontalAlignment="Center" Margin="-350,540,0,0" VerticalAlignment="Top" Height="50" Width="150" FontFamily="Bahnschrift" FontSize="24" Foreground="Black" BorderBrush="#FFB5B5B5" Content="ACEPTAR" Click="btnAceptar_Click">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFB5B5B5" Offset="1"/>
