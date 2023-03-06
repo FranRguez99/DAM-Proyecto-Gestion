@@ -56,25 +56,65 @@
                 </Grid>
             </TabItem>
             <TabItem Header="Tutores">
-                <Grid Background="#FFE5E5E5" Height="600" Width="800">
+                <Grid Height="600" Width="800">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/Vista/fondo.jpg"/>
+                    </Grid.Background>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="36*"/>
+                        <ColumnDefinition Width="53*"/>
                         <ColumnDefinition Width="0*"/>
-                        <ColumnDefinition Width="511*"/>
+                        <ColumnDefinition Width="39*"/>
+                        <ColumnDefinition Width="709*"/>
                     </Grid.ColumnDefinitions>
-                    <DataGrid x:Name="tablaTutor" IsReadOnly="True" SelectedCellsChanged="tablaTutores_SelectedCellsChanged" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="283,159,63,124" Grid.Column="2"/>
-                    <Label Content="GESTOR DE LOS TUTORES" HorizontalAlignment="Left" Margin="144,50,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift" FontSize="28" FontWeight="Bold" FontStyle="Italic" RenderTransformOrigin="0.541,0.516" Grid.Column="2" Height="44" Width="334"/>
-                    <Label Content="Nombre:" HorizontalAlignment="Left" Margin="2,226,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift" Grid.Column="2" Height="27" Width="63"/>
-                    <Label Content="Cod del Tutor:" HorizontalAlignment="Left" Margin="3,145,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift" Height="27" Width="95" Grid.Column="2"/>
-                    <TextBox x:Name="tfNombreTutor" HorizontalAlignment="Left" Margin="91,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="22" Grid.Column="2"/>
-                    <Label Content="E-Mail:" HorizontalAlignment="Left" Margin="6,304,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift" RenderTransformOrigin="0.613,1.163" Grid.Column="2" Height="27" Width="54"/>
-                    <Label Content="Teléfono:" HorizontalAlignment="Left" Margin="6,388,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift" RenderTransformOrigin="0.68,2.014" Grid.Column="2" Height="27" Width="65"/>
-                    <TextBox x:Name="tfEmailTutor" HorizontalAlignment="Left" Margin="91,306,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="94" Height="22" Grid.Column="2"/>
-                    <TextBox x:Name="tfTlfTutor" HorizontalAlignment="Left" Margin="91,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="94" Height="22" RenderTransformOrigin="0.272,2.04" Grid.Column="2"/>
-                    <TextBox x:Name="tfCodTutor" HorizontalAlignment="Left" Margin="104,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" Height="22" Grid.Column="2"/>
-                    <Button x:Name="btInsertTutores" Content="AÑADIR" HorizontalAlignment="Left" Margin="289,525,0,0" VerticalAlignment="Top" Height="41" Width="123" Click="btInsertTutores_Click" Grid.Column="2"/>
-                    <Button x:Name="btElimTutores" Content="ELIMINAR" HorizontalAlignment="Left" Margin="561,525,0,0" VerticalAlignment="Top" Height="41" Width="123" Click="btElimTutores_Click" Grid.Column="2" />
-                    <Button x:Name="btModiTutores" Content="MODIFICAR" HorizontalAlignment="Left" Margin="425,525,0,0" VerticalAlignment="Top" Height="41" Width="123" Click="btModiTutores_Click" Grid.Column="2"/>
+                    <DataGrid x:Name="tablaTutor" IsReadOnly="True" SelectedCellsChanged="tablaTutores_SelectedCellsChanged" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="245,159,63,124" Grid.Column="3"/>
+                    <Label Content="GESTOR DE LOS TUTORES" HorizontalAlignment="Left" Margin="106,50,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift" FontSize="28" FontWeight="Bold" FontStyle="Italic" RenderTransformOrigin="0.541,0.516" Grid.Column="3" Height="44" Width="334"/>
+                    <Label Content="Nombre:" HorizontalAlignment="Left" Margin="2,226,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift" Grid.Column="2" Height="27" Width="63" Grid.ColumnSpan="2"/>
+                    <Label Content="Cod del Tutor:" HorizontalAlignment="Left" Margin="3,145,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift" Height="27" Width="95" Grid.Column="2" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="tfNombreTutor" HorizontalAlignment="Left" Margin="53,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="22" Grid.Column="3"/>
+                    <Label Content="E-Mail:" HorizontalAlignment="Left" Margin="6,304,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift" RenderTransformOrigin="0.613,1.163" Grid.Column="2" Height="27" Width="54" Grid.ColumnSpan="2"/>
+                    <Label Content="Teléfono:" HorizontalAlignment="Left" Margin="6,388,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift" RenderTransformOrigin="0.68,2.014" Grid.Column="2" Height="27" Width="65" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="tfEmailTutor" HorizontalAlignment="Left" Margin="53,306,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="94" Height="22" Grid.Column="3"/>
+                    <TextBox x:Name="tfTlfTutor" HorizontalAlignment="Left" Margin="53,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="94" Height="22" RenderTransformOrigin="0.272,2.04" Grid.Column="3"/>
+                    <TextBox x:Name="tfCodTutor" HorizontalAlignment="Left" Margin="66,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" Height="22" Grid.Column="3"/>
+                    <Button x:Name="btInsertTutores" HorizontalAlignment="Left" Margin="185,508,0,0" VerticalAlignment="Top" Height="50" Width="150" FontFamily="Bahnschrift" FontSize="24" Foreground="Black" BorderBrush="#FFB5B5B5" Content="INSERTAR" Click="btInsertTutores_Click" Grid.Column="3">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFB5B5B5" Offset="1"/>
+                                <GradientStop Color="White" Offset="0"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="10"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button x:Name="btElimTutores" HorizontalAlignment="Left" Margin="549,508,0,0" VerticalAlignment="Top" Height="50" Width="150" FontFamily="Bahnschrift" FontSize="24" Foreground="Black" BorderBrush="#FFB5B5B5" Content="ELIMINAR" Click="btElimTutores_Click" Grid.Column="3">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFB5B5B5" Offset="1"/>
+                                <GradientStop Color="White" Offset="0"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="10"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button x:Name="btModiTutores" HorizontalAlignment="Left" Margin="370,508,0,0" VerticalAlignment="Top" Height="50" Width="150" FontFamily="Bahnschrift" FontSize="24" Foreground="Black" BorderBrush="#FFB5B5B5" Content="MODIFICAR" Click="btModiTutores_Click" Grid.Column="3">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFB5B5B5" Offset="1"/>
+                                <GradientStop Color="White" Offset="0"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="10"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
                 </Grid>
             </TabItem>
             <TabItem Header="Asignación">
