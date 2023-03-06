@@ -108,6 +108,12 @@
     </Compile>
     <Compile Include="ConexionBD\Connection.cs" />
     <Compile Include="ConexionBD\DatabaseConnection.cs" />
+    <Compile Include="Modelo\Asignacion.cs" />
+    <Compile Include="Modelo\AsignacionCRUD.cs" />
+    <Compile Include="Modelo\Empresa.cs" />
+    <Compile Include="Modelo\EmpresaCRUD.cs" />
+    <Compile Include="Modelo\Tutor.cs" />
+    <Compile Include="Modelo\TutorCRUD.cs" />
     <Compile Include="Vista\VentanaPrincipal.xaml.cs">
       <DependentUpon>VentanaPrincipal.xaml</DependentUpon>
     </Compile>
@@ -146,6 +152,9 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Vista\fondo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
