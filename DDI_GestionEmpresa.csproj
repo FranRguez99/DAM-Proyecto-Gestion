@@ -168,10 +168,11 @@
     <Compile Include="ConexionBD\DatabaseConnection.cs" />
     <Compile Include="Modelo\Empresa.cs" />
     <Compile Include="Modelo\EmpresaCRUD.cs" />
+    <Compile Include="Modelo\Tutor.cs" />
+    <Compile Include="Modelo\TutorCRUD.cs" />
     <Compile Include="Vista\FormularioEmpresas.xaml.cs">
       <DependentUpon>FormularioEmpresas.xaml</DependentUpon>
     </Compile>
-
     <Compile Include="Vista\VentanaPrincipal.xaml.cs">
       <DependentUpon>VentanaPrincipal.xaml</DependentUpon>
     </Compile>
