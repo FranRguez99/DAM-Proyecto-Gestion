@@ -118,7 +118,7 @@ namespace DDI_GestionEmpresa.Vista
         // Pestaña tutores
         private void btInsertTutores_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrEmpty(tfCodTutor.Text) || string.IsNullOrEmpty(tfNombreTutor.Text) || string.IsNullOrEmpty(tfTlfTutor.Text))
+            if (string.IsNullOrEmpty(tfCodTutor.Text) || string.IsNullOrEmpty(tfNombreTutor.Text) || string.IsNullOrEmpty(tfTlfTutor.Text) || string.IsNullOrEmpty(tfEmailTutor.Text))
             {
                 MessageBox.Show("ERROR: No debe dejar ningún campo vacío");
                 return;
@@ -154,7 +154,7 @@ namespace DDI_GestionEmpresa.Vista
 
         private void btModiTutores_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrEmpty(tfCodTutor.Text) || string.IsNullOrEmpty(tfNombreTutor.Text) || string.IsNullOrEmpty(tfTlfTutor.Text))
+            if (string.IsNullOrEmpty(tfCodTutor.Text) || string.IsNullOrEmpty(tfNombreTutor.Text) || string.IsNullOrEmpty(tfTlfTutor.Text) || string.IsNullOrEmpty(tfEmailTutor.Text))
             {
                 MessageBox.Show("ERROR: No debe dejar ningún campo vacío");
                 return;
