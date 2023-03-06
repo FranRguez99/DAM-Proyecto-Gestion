@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -40,8 +41,15 @@ namespace DDI_GestionEmpresa.Vista
 
         // Pestaña alumnos
 
+        //Comprobaciones en alumno
+
         private void btInsertAlumn_Click(object sender, RoutedEventArgs e)
         {
+            if (!validaCamposAlumnos())
+            {
+                return;
+            }
+
             int idAlumno = int.Parse(tfCodAlumno.Text);
             string dni = tfDniAlumno.Text;
             string nombre = tfNombreAlumno.Text;
@@ -53,11 +61,56 @@ namespace DDI_GestionEmpresa.Vista
             tablaAlumno.ItemsSource = alumnoCRUD.GetAllAlumnosAsDataTable().DefaultView;
 
             limpiaCamposAlumno();
-
         }
- 
+
+        private bool validaCamposAlumnos()
+        {
+            // Expresión regular para validar que codAlumno solo contenga números
+            string regexCodAlumno = "^\\d+$";
+
+            // Expresión regular para validar que dniAlumno contenga 8 números y una letra al final
+            string regexDniAlumno = "^\\d{8}[A-Z]$";
+
+            if (!Regex.IsMatch(tfCodAlumno.Text, regexCodAlumno))
+            {
+                MessageBox.Show("El campo de código de alumno solo puede contener números.");
+                return false;
+            }
+
+            if (!Regex.IsMatch(tfDniAlumno.Text, regexDniAlumno))
+            {
+                MessageBox.Show("El campo de DNI de alumno debe contener 8 números y una letra al final.");
+                return false;
+            }
+
+            if (!Regex.IsMatch(tfNombreAlumno.Text, "^(?!\\s*$).+"))
+            {
+                MessageBox.Show("El campo de nombre de alumno no puede estar vacío.");
+                return false;
+            }
+
+            if (!Regex.IsMatch(tfApellidosAlumno.Text, "^(?!\\s*$).+"))
+            {
+                MessageBox.Show("El campo de apellidos de alumno no puede estar vacío.");
+                return false;
+            }
+
+            if (dpFechaNacAlumno.SelectedDate == null)
+            {
+                MessageBox.Show("Debe seleccionar una fecha de nacimiento para el alumno.");
+                return false;
+            }
+
+            return true;
+        }
+
+
         private void btModiAlumn_Click(object sender, RoutedEventArgs e)
         {
+            if (!validaCamposAlumnos())
+            {
+                return;
+            }
             int idAlumno = int.Parse(tfCodAlumno.Text);
             string dni = tfDniAlumno.Text;
             string nombre = tfNombreAlumno.Text;
