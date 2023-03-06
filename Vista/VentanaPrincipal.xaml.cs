@@ -238,6 +238,11 @@ namespace DDI_GestionEmpresa.Vista
         // Pestaña tutores
         private void btInsertTutores_Click(object sender, RoutedEventArgs e)
         {
+            if (string.IsNullOrEmpty(tfCodTutor.Text) || string.IsNullOrEmpty(tfNombreTutor.Text) || string.IsNullOrEmpty(tfTlfTutor.Text) || string.IsNullOrEmpty(tfEmailTutor.Text))
+            {
+                MessageBox.Show("ERROR: No debe dejar ningún campo vacío");
+                return;
+            }
             if (!System.Text.RegularExpressions.Regex.IsMatch(tfCodTutor.Text, @"^[0-9]+$"))
             {
                 MessageBox.Show("ERROR: El código de tutor no debe contener ninguna letra.");
@@ -269,6 +274,11 @@ namespace DDI_GestionEmpresa.Vista
 
         private void btModiTutores_Click(object sender, RoutedEventArgs e)
         {
+            if (string.IsNullOrEmpty(tfCodTutor.Text) || string.IsNullOrEmpty(tfNombreTutor.Text) || string.IsNullOrEmpty(tfTlfTutor.Text) || string.IsNullOrEmpty(tfEmailTutor.Text))
+            {
+                MessageBox.Show("ERROR: No debe dejar ningún campo vacío");
+                return;
+            }
             if (!System.Text.RegularExpressions.Regex.IsMatch(tfCodTutor.Text, @"^[0-9]+$"))
             {
                 MessageBox.Show("ERROR: El código de tutor no debe contener ninguna letra.");
