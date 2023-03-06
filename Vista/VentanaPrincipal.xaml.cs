@@ -345,6 +345,17 @@ namespace DDI_GestionEmpresa.Vista
             tfEmailTutor.Text = "";
             tfTlfTutor.Text = "";
         }
+        // Limita campos de texto a 9
+        public void TextBoxLimite9(object sender, EventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            if (textBox != null && textBox.Text.Length > 9)
+            {
+                textBox.Text = textBox.Text.Substring(0, 9);
+                textBox.SelectionStart = 9;
+            }
+        }
+
 
         
 
