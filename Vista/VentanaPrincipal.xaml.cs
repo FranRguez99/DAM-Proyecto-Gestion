@@ -1,4 +1,5 @@
 ﻿using DDI_GestionEmpresa.Modelo;
+using Google.Protobuf.WellKnownTypes;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -117,6 +118,22 @@ namespace DDI_GestionEmpresa.Vista
         // Pestaña tutores
         private void btInsertTutores_Click(object sender, RoutedEventArgs e)
         {
+            if (!System.Text.RegularExpressions.Regex.IsMatch(tfCodTutor.Text, @"^[0-9]+$"))
+            {
+                MessageBox.Show("ERROR: El código de tutor no debe contener ninguna letra.");
+                return;
+            }
+            if (System.Text.RegularExpressions.Regex.IsMatch(tfNombreTutor.Text, @"\d"))
+            {
+                MessageBox.Show("ERROR: El nombre no debe incluir ningún número.");
+                return;
+            }
+            if (!System.Text.RegularExpressions.Regex.IsMatch(tfTlfTutor.Text, @"^[0-9]+$"))
+            {
+                MessageBox.Show("ERROR: El teléfono no debe contener ninguna letra.");
+                return;
+            }
+
             int idTutores = int.Parse(tfCodTutor.Text);
             string nombre = tfNombreTutor.Text;
             string email = tfEmailTutor.Text;
@@ -132,6 +149,21 @@ namespace DDI_GestionEmpresa.Vista
 
         private void btModiTutores_Click(object sender, RoutedEventArgs e)
         {
+            if (!System.Text.RegularExpressions.Regex.IsMatch(tfCodTutor.Text, @"^[0-9]+$"))
+            {
+                MessageBox.Show("ERROR: El código de tutor no debe contener ninguna letra.");
+                return;
+            }
+            if (System.Text.RegularExpressions.Regex.IsMatch(tfNombreTutor.Text, @"\d"))
+            {
+                MessageBox.Show("ERROR: El nombre no debe incluir ningún número.");
+                return;
+            }
+            if (!System.Text.RegularExpressions.Regex.IsMatch(tfTlfTutor.Text, @"^[0-9]+$"))
+            {
+                MessageBox.Show("ERROR: El teléfono no debe contener ninguna letra.");
+                return;
+            }
             int idTutores = int.Parse(tfCodTutor.Text);
             string nombre = tfNombreTutor.Text;
             string email = tfEmailTutor.Text;
