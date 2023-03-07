@@ -9,7 +9,8 @@ namespace DDI_GestionEmpresa.Modelo
     public class Tutor
     {
         // Campos de la clase Tutor
-        public int idTutor { get; set; }
+
+        public int idTutor{ get; set; }
         public string nombre { get; set; }
         public string email { get; set; }
         public string telefono { get; set; }
@@ -24,3 +25,4 @@ namespace DDI_GestionEmpresa.Modelo
         }
     }
 }
+

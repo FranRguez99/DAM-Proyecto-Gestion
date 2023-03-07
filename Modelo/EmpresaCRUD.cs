@@ -21,7 +21,8 @@ namespace DDI_GestionEmpresa.Modelo
 
         public void InsertEmpresa(Empresa empresa)
         {
-            string query = "INSERT INTO empresas Values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
+
+            string query = "INSERT INTO empresas Values (@idEmpresa, @cif, @nombre, @direccion, @codPostal, @localidad, @jornada, @modalidad, @mail, @dniRepLegal, @nombreRepLegal, @apellidoRepLegal, @dniTutLab, @nombreTutLab, @apellidoTutLab, @telefonoTutLab);";
             MySqlCommand mySqlCommand = new MySqlCommand(query, databaseConnection.getConnection());
             mySqlCommand.Parameters.AddWithValue("@idEmpresa", empresa.idEmpresa);
             mySqlCommand.Parameters.AddWithValue("@cif", empresa.cif);
@@ -164,3 +165,4 @@ namespace DDI_GestionEmpresa.Modelo
 
     }
 }
+

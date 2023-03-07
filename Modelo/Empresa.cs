@@ -47,6 +47,29 @@ namespace DDI_GestionEmpresa.Modelo
             this.apellidoTutLab = apellidoTutLab;
             this.telefonoTutLab = telefonoTutLab;
         }
+
+
+        public Empresa(string cif, string nombre, string direccion, string codPostal, string localidad,
+                       string jornada, string modalidad, string mail, string dniRepLegal, string nombreRepLegal,
+                       string apellidoRepLegal, string dniTutLab, string nombreTutLab, string apellidoTutLab,
+                       string telefonoTutLab)
+        {
+            this.cif = cif;
+            this.nombre = nombre;
+            this.direccion = direccion;
+            this.codPostal = codPostal;
+            this.localidad = localidad;
+            this.jornada = jornada;
+            this.modalidad = modalidad;
+            this.mail = mail;
+            this.dniRepLegal = dniRepLegal;
+            this.nombreRepLegal = nombreRepLegal;
+            this.apellidoRepLegal = apellidoRepLegal;
+            this.dniTutLab = dniTutLab;
+            this.nombreTutLab = nombreTutLab;
+            this.apellidoTutLab = apellidoTutLab;
+            this.telefonoTutLab = telefonoTutLab;
+        }
     }
 
 }
