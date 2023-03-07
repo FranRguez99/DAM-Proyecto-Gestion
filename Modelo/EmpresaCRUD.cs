@@ -61,7 +61,7 @@ namespace DDI_GestionEmpresa.Modelo
                            "localidad=@localidad, jornada=@jornada, modalidad=@modalidad, mail=@mail, " +
                            "dniRepLegal=@dniRepLegal, nombreRepLegal=@nombreRepLegal, apellidoRepLegal=@apellidoRepLegal, " +
                            "dniTutLab=@dniTutLab, nombreTutLab=@nombreTutLab, apellidoTutLab=@apellidoTutLab, " +
-                           "telefonoTutLab=@telefonoTutLab WHERE idEmpresa=@idEmpresa";
+                           "telefonoTutLab=@telefonoTutLab WHERE cif=@cif";
             MySqlCommand cmd = new MySqlCommand(query, databaseConnection.getConnection());
             cmd.Parameters.AddWithValue("@idEmpresa", empresa.idEmpresa);
             cmd.Parameters.AddWithValue("@cif", empresa.cif);
@@ -82,6 +82,8 @@ namespace DDI_GestionEmpresa.Modelo
 
             try
             {
+
+               
                 cmd.ExecuteNonQuery();
             }
             catch (Exception e)
@@ -94,11 +96,11 @@ namespace DDI_GestionEmpresa.Modelo
             }
         }
 
-        public void DeleteEmpresa(int idEmpresa)
+        public void DeleteEmpresa(Empresa empresa)
         {
             string query = "DELETE FROM empresa WHERE idEmpresa=@idEmpresa";
             MySqlCommand cmd = new MySqlCommand(query, databaseConnection.getConnection());
-            cmd.Parameters.AddWithValue("@idEmpresa", idEmpresa);
+            cmd.Parameters.AddWithValue("@idEmpresa", empresa.idEmpresa);
 
             try
             {

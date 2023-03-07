@@ -39,9 +39,33 @@ namespace DDI_GestionEmpresa.Vista
             empresaCRUD = new EmpresaCRUD();
             this.empresa = empresa;
             this.editar = editar;
+
+            rellenaCampos();
         }
 
         // Métodos
+
+        /// <summary>
+        /// Rellena los campos del formulario con los datos de una empresa a editar
+        /// </summary>
+        public void rellenaCampos()
+        {
+            tfCIF.Text = empresa.cif;
+            tfNombreEmpresa.Text = empresa.nombre;
+            tfDireccion.Text = empresa.direccion;
+            tfCodPostal.Text = empresa.codPostal;
+            tfLocalidad.Text = empresa.localidad;
+            cbJornada.Text = empresa.jornada;
+            cbModalidad.Text = empresa.modalidad;
+            tfMail.Text = empresa.mail;
+            tfDNIRL.Text = empresa.dniRepLegal;
+            tfNombreRL.Text = empresa.nombreRepLegal;
+            tfApellidosRL.Text = empresa.apellidoRepLegal;
+            tfDNITL.Text = empresa.dniTutLab;
+            tfNombreTL.Text = empresa.nombreTutLab;
+            tfApellidosTL.Text = empresa.apellidoTutLab;
+            tfTelefonoTL.Text = empresa.telefonoTutLab;
+        }
 
         /// <summary>
         /// Crea un objeto empresa a partir de los campos de nuestro formulario
@@ -111,9 +135,19 @@ namespace DDI_GestionEmpresa.Vista
             try
             {
                 leerEmpresa();
-                empresaCRUD.InsertEmpresa(empresa);
-                MessageBox.Show("Empresa insertada con éxito", "EMPRESA INSERTADA",
-                    MessageBoxButton.OK, MessageBoxImage.Information);
+
+                if (editar)
+                {
+                    empresaCRUD.UpdateEmpresa(empresa);
+                    MessageBox.Show("Empresa actualizada con éxito", "EMPRESA ACTUALIZADA",
+                        MessageBoxButton.OK, MessageBoxImage.Information);
+                } else
+                {
+                    empresaCRUD.InsertEmpresa(empresa);
+                    MessageBox.Show("Empresa insertada con éxito", "EMPRESA INSERTADA",
+                        MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                
 
                 // Cerramos la ventana
                 Button button = (Button)sender;
@@ -130,5 +164,14 @@ namespace DDI_GestionEmpresa.Vista
             }
         }
 
+        /// <summary>
+        /// Cierra la ventana
+        /// </summary>
+        private void btnCancelar_Click(object sender, RoutedEventArgs e)
+        {
+            Button button = (Button)sender;
+            Window window = Window.GetWindow(button);
+            window.Close();
+        }
     }
 }

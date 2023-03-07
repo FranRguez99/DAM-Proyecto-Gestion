@@ -26,6 +26,9 @@
                             <DataGridTextColumn Header="Localidad" Binding="{Binding localidad}" Width="*"/>
                             <DataGridTextColumn Header="Mail" Binding="{Binding mail}" Width="*"/>
                         </DataGrid.Columns>
+                        <DataGrid.Background>
+                            <ImageBrush ImageSource="/Vista/fondo.jpg"/>
+                        </DataGrid.Background>
                     </DataGrid>
                     <Label Content="GESTIÓN DE DATOS DE EMPRESAS" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.254,0.508"/>
                     <Button x:Name="btnInsertar" HorizontalAlignment="Left" Margin="75,508,0,0" VerticalAlignment="Top" Height="50" Width="150" FontFamily="Bahnschrift" FontSize="24" Foreground="Black" BorderBrush="#FFB5B5B5" Content="INSERTAR" Click="btnInsertar_Click">
@@ -41,7 +44,7 @@
                             </Style>
                         </Button.Resources>
                     </Button>
-                    <Button x:Name="btnModificar" HorizontalAlignment="Center" Margin="0,515,0,0" VerticalAlignment="Top" Height="50" Width="150" FontFamily="Bahnschrift" FontSize="24" Foreground="Black" BorderBrush="#FFB5B5B5" Content="MODIFICAR">
+                    <Button x:Name="btnModificar" HorizontalAlignment="Center" Margin="0,515,0,0" VerticalAlignment="Top" Height="50" Width="150" FontFamily="Bahnschrift" FontSize="24" Foreground="Black" BorderBrush="#FFB5B5B5" Content="MODIFICAR" Click="btnModificar_Click">
                         <Button.Resources>
                             <Style TargetType="{x:Type Border}">
                                 <Setter Property="CornerRadius" Value="10"/>
@@ -54,7 +57,7 @@
                             </LinearGradientBrush>
                         </Button.Background>
                     </Button>
-                    <Button x:Name="btnEliminar" HorizontalAlignment="Left" Margin="575,515,0,0" VerticalAlignment="Top" Height="50" Width="150" FontFamily="Bahnschrift" FontSize="24" Foreground="Black" BorderBrush="#FFB5B5B5" Content="ELIMINAR">
+                    <Button x:Name="btnEliminar" HorizontalAlignment="Left" Margin="575,515,0,0" VerticalAlignment="Top" Height="50" Width="150" FontFamily="Bahnschrift" FontSize="24" Foreground="Black" BorderBrush="#FFB5B5B5" Content="ELIMINAR" Click="btnEliminar_Click">
                         <Button.Resources>
                             <Style TargetType="{x:Type Border}">
                                 <Setter Property="CornerRadius" Value="10"/>
@@ -82,7 +85,7 @@
                         <ColumnDefinition Width="17*"/>
                         <ColumnDefinition Width="383*"/>
                     </Grid.ColumnDefinitions>
-                    <DataGrid IsReadOnly="True" SelectedCellsChanged="tablaAlumno_SelectedCellsChanged" x:Name="tablaAlumno" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="308,91,63,182" Grid.Column="1" Grid.Row="1">
+                    <DataGrid IsReadOnly="True" SelectedCellsChanged="tablaAlumno_SelectedCellsChanged" x:Name="tablaAlumno" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="308,91,33,182" Grid.Column="1" Grid.Row="1" ColumnWidth="*">
                         <DataGrid.Background>
                             <ImageBrush ImageSource="/Vista/fondo.jpg"/>
                         </DataGrid.Background>
@@ -134,7 +137,7 @@
                             </LinearGradientBrush>
                         </DatePicker.Background>
                     </DatePicker>
-                    <Button x:Name="btCreaAlumn" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="39" Width="132" FontFamily="Bahnschrift" FontSize="24" Foreground="Black" BorderBrush="#FFB5B5B5" Content="AÑADIR" Grid.Column="1" Margin="294,450,0,0" Grid.Row="1">
+                    <Button x:Name="btCreaAlumn" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="39" Width="132" FontFamily="Bahnschrift" FontSize="24" Foreground="Black" BorderBrush="#FFB5B5B5" Content="AÑADIR" Grid.Column="1" Margin="294,450,0,0" Grid.Row="1" Click="btInsertAlumn_Click">
                         <Button.Background>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                 <GradientStop Color="#FFB5B5B5" Offset="1"/>
@@ -147,7 +150,7 @@
                             </Style>
                         </Button.Resources>
                     </Button>
-                    <Button x:Name="btModiAlumn" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="39" Width="132" FontFamily="Bahnschrift" FontSize="24" Foreground="Black" BorderBrush="#FFB5B5B5" Content="MODIFICAR" Grid.Column="1" Margin="440,450,0,0" Grid.Row="1">
+                    <Button x:Name="btModiAlumn" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="39" Width="132" FontFamily="Bahnschrift" FontSize="24" Foreground="Black" BorderBrush="#FFB5B5B5" Content="MODIFICAR" Grid.Column="1" Margin="440,450,0,0" Grid.Row="1" Click="btModiAlumn_Click">
                         <Button.Background>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                 <GradientStop Color="#FFB5B5B5" Offset="1"/>
@@ -160,7 +163,7 @@
                             </Style>
                         </Button.Resources>
                     </Button>
-                    <Button x:Name="btElimAlumn" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="39" Width="132" FontFamily="Bahnschrift" FontSize="24" Foreground="Black" BorderBrush="#FFB5B5B5" Content="ELIMINAR" Grid.Column="1" Margin="584,450,0,0" Grid.Row="1">
+                    <Button x:Name="btElimAlumn" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="39" Width="132" FontFamily="Bahnschrift" FontSize="24" Foreground="Black" BorderBrush="#FFB5B5B5" Content="ELIMINAR" Grid.Column="1" Margin="584,450,0,0" Grid.Row="1" Click="btElimAlumn_Click">
                         <Button.Background>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                 <GradientStop Color="#FFB5B5B5" Offset="1"/>
