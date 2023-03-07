@@ -97,13 +97,41 @@ namespace DDI_GestionEmpresa.Vista
         }
 
         /// <summary>
-        /// Lanza una ventana para la creación de un nuevo formulario
+        /// Lanza una ventana de formulario para la inserción de una nueva empresa
         /// </summary>
         private void btnInsertar_Click(object sender, RoutedEventArgs e)
         {
             FormularioEmpresas formularioEmpresas = new FormularioEmpresas(false);
             formularioEmpresas.ShowDialog();
+            cargarEmpresas();
+        }
+
+        /// <summary>
+        /// Lanza una ventana de formulario para la modificación de una empresa
+        /// </summary>
+        private void btnModificar_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                FormularioEmpresas formularioEmpresas = new FormularioEmpresas(empresaSeleccionada, true);
+                formularioEmpresas.ShowDialog();
+                cargarEmpresas();
+            }
+            catch
+            {
+                MessageBox.Show("No hay ninguna empresa seleccionada", "ERROR",
+                        MessageBoxButton.OK, MessageBoxImage.Error);
+            }
             
+        }
+
+        /// <summary>
+        /// Elimina la empresa seleccionada
+        /// </summary>
+        private void btnEliminar_Click(object sender, RoutedEventArgs e)
+        {
+            empresaCRUD.DeleteEmpresa(empresaSeleccionada);
+            cargarEmpresas();
         }
 
 
@@ -355,10 +383,6 @@ namespace DDI_GestionEmpresa.Vista
                 textBox.SelectionStart = 9;
             }
         }
-
-
-        
-
 
 
         // Pestaña asignación
