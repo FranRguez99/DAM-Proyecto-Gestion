@@ -48,6 +48,7 @@ namespace DDI_GestionEmpresa.Modelo
             this.telefonoTutLab = telefonoTutLab;
         }
 
+
         public Empresa(string cif, string nombre, string direccion, string codPostal, string localidad,
                        string jornada, string modalidad, string mail, string dniRepLegal, string nombreRepLegal,
                        string apellidoRepLegal, string dniTutLab, string nombreTutLab, string apellidoTutLab,

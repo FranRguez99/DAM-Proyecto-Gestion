@@ -24,21 +24,40 @@ namespace DDI_GestionEmpresa.Vista
 
         // Atributos
         private AlumnoCRUD alumnoCRUD;
+        private AsignacionCRUD asignacionCRUD;
         private EmpresaCRUD empresaCRUD;
         private List<Empresa> listaEmpresas;
         public Empresa empresaSeleccionada;
         private TutorCRUD tutorCRUD;
+        
         public VentanaPrincipal()
         {   
             InitializeComponent();
             alumnoCRUD= new AlumnoCRUD();
+            asignacionCRUD = new AsignacionCRUD();
             empresaCRUD= new EmpresaCRUD();
             listaEmpresas= new List<Empresa>();
             tutorCRUD = new TutorCRUD();
 
             cargarEmpresas();
-
             
+
+          
+            tablaAsig.ItemsSource = asignacionCRUD.GetAddtabla();
+
+            foreach (Alumno a in asignacionCRUD.GetAllAlumnos())
+            {
+                cbEleccAlum.Items.Add(a.Apellido + ", " + a.Nombre);
+            }
+            foreach (Empresa e in asignacionCRUD.GetAllEmpresas())
+            {
+                cbEleccEmp.Items.Add(e.nombre);
+            }
+            foreach (Tutor t in asignacionCRUD.GetAllTutores())
+            {
+                cbEleccTutor.Items.Add(t.nombre);
+            }
+       
         }
 
         private void VentanaPrincipal_Loaded(object sender, RoutedEventArgs e)
@@ -234,6 +253,12 @@ namespace DDI_GestionEmpresa.Vista
             tfApellidosAlumno.Text = "";
             dpFechaNacAlumno.SelectedDate = null;
         }
+        private void limpiaCamposAsig()
+        {
+            cbEleccAlum.Text = " ";
+            cbEleccEmp.Text = " ";
+            cbEleccTutor.Text = " ";
+        }
 
         // Pestaña tutores
         private void btInsertTutores_Click(object sender, RoutedEventArgs e)
@@ -362,6 +387,24 @@ namespace DDI_GestionEmpresa.Vista
 
 
         // Pestaña asignación
+        private void btAnadirAsig_Click(object sender, RoutedEventArgs e)
+        {
+            string nombrecompletoAlumno = cbEleccAlum.Text;
+            string[] nombrecompletoAlumno1 = nombrecompletoAlumno.Split(',');
+            string nombreEmpresa = cbEleccEmp.Text;
+            string nombrecompletoTutor = cbEleccTutor.Text;
 
+            AsignacionCRUD asignacionCRUD = new AsignacionCRUD();
+            asignacionCRUD.InsertAsig(nombrecompletoAlumno1[0], nombreEmpresa, nombrecompletoTutor);
+
+            tablaAsig.ItemsSource = asignacionCRUD.GetAddtabla();
+            limpiaCamposAsig();
+      
+        }
+
+        private void tablaAsig_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

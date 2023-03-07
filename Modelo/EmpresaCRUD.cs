@@ -21,6 +21,7 @@ namespace DDI_GestionEmpresa.Modelo
 
         public void InsertEmpresa(Empresa empresa)
         {
+
             string query = "INSERT INTO empresas Values (@idEmpresa, @cif, @nombre, @direccion, @codPostal, @localidad, @jornada, @modalidad, @mail, @dniRepLegal, @nombreRepLegal, @apellidoRepLegal, @dniTutLab, @nombreTutLab, @apellidoTutLab, @telefonoTutLab);";
             MySqlCommand mySqlCommand = new MySqlCommand(query, databaseConnection.getConnection());
             mySqlCommand.Parameters.AddWithValue("@idEmpresa", empresa.idEmpresa);
@@ -54,7 +55,6 @@ namespace DDI_GestionEmpresa.Modelo
             }
         }
 
-
         public void UpdateEmpresa(Empresa empresa)
         {
             string query = "UPDATE empresas SET cif=@cif, nombre=@nombre, direccion=@direccion, codPostal=@codPostal, " +
@@ -79,8 +79,6 @@ namespace DDI_GestionEmpresa.Modelo
             cmd.Parameters.AddWithValue("@nombreTutLab", empresa.nombreTutLab);
             cmd.Parameters.AddWithValue("@apellidoTutLab", empresa.apellidoTutLab);
             cmd.Parameters.AddWithValue("@telefonoTutLab", empresa.telefonoTutLab);
-
-            
 
             try
             {
@@ -167,3 +165,4 @@ namespace DDI_GestionEmpresa.Modelo
 
     }
 }
+

@@ -13,6 +13,6 @@ namespace DDI_GestionEmpresa.ConexionBD
         protected string port = "3307";
         protected string database = "gestionfct";
         protected string user = "root";
-        protected string password = "root";
+        protected string password = "";
     }
 }
