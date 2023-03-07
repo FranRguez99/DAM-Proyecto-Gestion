@@ -55,6 +55,14 @@ namespace DDI_GestionEmpresa.Modelo
             }
         }
 
+        public int cuentaEmpresas()
+        {
+            List<Empresa> listaEmpresas = new List<Empresa>();
+            listaEmpresas = GetAllEmpresas();
+            Console.WriteLine(listaEmpresas.Count.ToString());
+            return listaEmpresas.Count();
+        }
+
         public void UpdateEmpresa(Empresa empresa)
         {
             string query = "UPDATE empresas SET cif=@cif, nombre=@nombre, direccion=@direccion, codPostal=@codPostal, " +

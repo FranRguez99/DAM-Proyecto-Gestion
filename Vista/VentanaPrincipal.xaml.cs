@@ -40,8 +40,8 @@ namespace DDI_GestionEmpresa.Vista
             tutorCRUD = new TutorCRUD();
 
             cargarEmpresas();
-            
 
+            Console.WriteLine(empresaCRUD.cuentaEmpresas());
           
             tablaAsig.ItemsSource = asignacionCRUD.GetAddtabla();
 
@@ -65,6 +65,9 @@ namespace DDI_GestionEmpresa.Vista
             tablaAlumno.ItemsSource = alumnoCRUD.GetAllAlumnosAsDataTable().DefaultView;
             tablaTutor.ItemsSource = tutorCRUD.GetAllTutoresAsDataTable().DefaultView;
         }
+
+        // Métodos para test
+        
 
         // Pestaña empresas
 

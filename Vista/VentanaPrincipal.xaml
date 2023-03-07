@@ -190,7 +190,11 @@
                         <ColumnDefinition Width="14*"/>
                         <ColumnDefinition Width="708*"/>
                     </Grid.ColumnDefinitions>
-                    <DataGrid x:Name="tablaTutor" IsReadOnly="True" SelectedCellsChanged="tablaTutores_SelectedCellsChanged" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="245,159,63,124" Grid.Column="4"/>
+                    <DataGrid x:Name="tablaTutor" ColumnWidth="*" IsReadOnly="True" SelectedCellsChanged="tablaTutores_SelectedCellsChanged" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="245,159,63,124" Grid.Column="4">
+                        <DataGrid.Background>
+                            <ImageBrush ImageSource="/Vista/fondo.jpg"/>
+                        </DataGrid.Background>
+                    </DataGrid>
                     <Label Content="GESTOR DE LOS TUTORES" HorizontalAlignment="Left" Margin="141,48,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift" FontSize="28" FontWeight="Bold" RenderTransformOrigin="0.541,0.516" Grid.Column="4" Height="44" Width="334"/>
                     <Label Content="Nombre:" HorizontalAlignment="Left" Margin="2,226,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift" Grid.Column="2" Height="27" Width="63" Grid.ColumnSpan="3"/>
                     <Label Content="Cod del Tutor:" HorizontalAlignment="Left" Margin="3,145,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Bahnschrift" Height="27" Width="95" Grid.Column="2" Grid.ColumnSpan="3"/>
