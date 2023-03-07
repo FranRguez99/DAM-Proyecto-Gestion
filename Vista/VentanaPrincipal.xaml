@@ -6,7 +6,6 @@
         xmlns:local="clr-namespace:DDI_GestionEmpresa.Vista"
         Loaded="VentanaPrincipal_Loaded"
         mc:Ignorable="d"
-        Loaded="VentanaPrincipal_Loaded"
         Title="VentanaPrincipal" Height="auto" Width="auto" SizeToContent="WidthAndHeight">
     <Grid Height="auto" Width="auto">
         <TabControl>
@@ -283,16 +282,15 @@
                         <ColumnDefinition Width="205*"/>
                         <ColumnDefinition Width="453*"/>
                     </Grid.ColumnDefinitions>
-                    <DataGrid x:Name="tablaAsig" IsReadOnly="True" AutoGenerateColumns="False" Margin="0.2,119,38,70" Grid.Column="5" SelectionChanged="tablaAsig_SelectionChanged">
+                    <DataGrid x:Name="tablaAsig" IsReadOnly="True" AutoGenerateColumns="False" Margin="0.2,119,38,70" Grid.Column="5">
                         <DataGrid.Columns>
-
-                            <DataGridTextColumn Header="Nombre y apellidos del alumno" Binding="{Binding nombreAlumno}" />
-                            <DataGridTextColumn Header="Nombre de empresa" Binding="{Binding nombreEmpresa}" />
-                            <DataGridTextColumn Header="Nombre del tutor" Binding="{Binding nombreTutor}" />
-
-
-
+                            <DataGridTextColumn Header="Nombre y apellidos del alumno" Binding="{Binding nombreAlumno}" Width="*"/>
+                            <DataGridTextColumn Header="Nombre de empresa" Binding="{Binding nombreEmpresa}" Width="*"/>
+                            <DataGridTextColumn Header="Nombre del tutor" Binding="{Binding nombreTutor}" Width="*"/>
                         </DataGrid.Columns>
+                        <DataGrid.Background>
+                            <ImageBrush ImageSource="/Vista/fondo.jpg"/>
+                        </DataGrid.Background>
                     </DataGrid>
 
                     <Label Content="GESTOR DE LA ASIGNACIÓN DE PLAZAS" HorizontalAlignment="Left" Margin="54.2,53,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift" FontSize="28" FontWeight="Bold" FontStyle="Italic" RenderTransformOrigin="0.541,0.516" Grid.Column="2" Height="44" Width="522" Grid.ColumnSpan="4"/>

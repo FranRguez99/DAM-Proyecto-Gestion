@@ -426,9 +426,6 @@ namespace DDI_GestionEmpresa.Vista
       
         }
 
-        private void tablaAsig_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
+       
     }
 }
