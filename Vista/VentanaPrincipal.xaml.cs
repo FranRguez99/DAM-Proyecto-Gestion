@@ -39,31 +39,18 @@ namespace DDI_GestionEmpresa.Vista
             listaEmpresas= new List<Empresa>();
             tutorCRUD = new TutorCRUD();
 
-            cargarEmpresas();
-
-            Console.WriteLine(empresaCRUD.cuentaEmpresas());
-          
             tablaAsig.ItemsSource = asignacionCRUD.GetAddtabla();
 
-            foreach (Alumno a in asignacionCRUD.GetAllAlumnos())
-            {
-                cbEleccAlum.Items.Add(a.Apellido + ", " + a.Nombre);
-            }
-            foreach (Empresa e in asignacionCRUD.GetAllEmpresas())
-            {
-                cbEleccEmp.Items.Add(e.nombre);
-            }
-            foreach (Tutor t in asignacionCRUD.GetAllTutores())
-            {
-                cbEleccTutor.Items.Add(t.nombre);
-            }
-       
+            cargarEmpresas();
+            cargarAsignacion();
         }
 
         private void VentanaPrincipal_Loaded(object sender, RoutedEventArgs e)
         {
+
             tablaAlumno.ItemsSource = alumnoCRUD.GetAllAlumnosAsDataTable().DefaultView;
             tablaTutor.ItemsSource = tutorCRUD.GetAllTutoresAsDataTable().DefaultView;
+            cargarAsignacion();
         }
 
         // Métodos para test
@@ -126,6 +113,7 @@ namespace DDI_GestionEmpresa.Vista
             FormularioEmpresas formularioEmpresas = new FormularioEmpresas(false);
             formularioEmpresas.ShowDialog();
             cargarEmpresas();
+            cargarAsignacion();
         }
 
         /// <summary>
@@ -138,6 +126,7 @@ namespace DDI_GestionEmpresa.Vista
                 FormularioEmpresas formularioEmpresas = new FormularioEmpresas(empresaSeleccionada, true);
                 formularioEmpresas.ShowDialog();
                 cargarEmpresas();
+                cargarAsignacion();
             }
             catch
             {
@@ -154,6 +143,7 @@ namespace DDI_GestionEmpresa.Vista
         {
             empresaCRUD.DeleteEmpresa(empresaSeleccionada);
             cargarEmpresas();
+            cargarAsignacion();
         }
 
 
@@ -179,6 +169,7 @@ namespace DDI_GestionEmpresa.Vista
             tablaAlumno.ItemsSource = alumnoCRUD.GetAllAlumnosAsDataTable().DefaultView;
 
             limpiaCamposAlumno();
+            cargarAsignacion();
         }
 
         private bool validaCamposAlumnos()
@@ -239,6 +230,7 @@ namespace DDI_GestionEmpresa.Vista
             MessageBox.Show("Alumno actualizado correctamente");
             tablaAlumno.ItemsSource = alumnoCRUD.GetAllAlumnosAsDataTable().DefaultView;
             limpiaCamposAlumno();
+            cargarAsignacion();
 
         }
 
@@ -249,6 +241,7 @@ namespace DDI_GestionEmpresa.Vista
             MessageBox.Show("Alumno eliminado correctamente");
             tablaAlumno.ItemsSource = alumnoCRUD.GetAllAlumnosAsDataTable().DefaultView;
             limpiaCamposAlumno();
+            cargarAsignacion();
 
         }
 
@@ -325,6 +318,7 @@ namespace DDI_GestionEmpresa.Vista
             tablaTutor.ItemsSource = tutorCRUD.GetAllTutoresAsDataTable().DefaultView;
 
             limpiaCamposTutor();
+            cargarAsignacion();
 
         }
 
@@ -360,6 +354,8 @@ namespace DDI_GestionEmpresa.Vista
             tablaTutor.ItemsSource = tutorCRUD.GetAllTutoresAsDataTable().DefaultView;
             limpiaCamposTutor();
 
+            cargarAsignacion();
+
         }
 
         private void btElimTutores_Click(object sender, RoutedEventArgs e)
@@ -369,7 +365,7 @@ namespace DDI_GestionEmpresa.Vista
             MessageBox.Show("Tutor eliminado correctamente");
             tablaTutor.ItemsSource = tutorCRUD.GetAllTutoresAsDataTable().DefaultView;
             limpiaCamposTutor();
-
+            cargarAsignacion();
         }
 
         private void tablaTutores_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
@@ -429,6 +425,26 @@ namespace DDI_GestionEmpresa.Vista
       
         }
 
-       
+
+        private void cargarAsignacion()
+        {
+            cbEleccAlum.Items.Clear();
+            cbEleccEmp.Items.Clear();
+            cbEleccTutor.Items.Clear();
+
+            foreach (Alumno a in asignacionCRUD.GetAllAlumnos())
+            {
+                cbEleccAlum.Items.Add(a.Apellido + ", " + a.Nombre);
+            }
+            foreach (Empresa e in asignacionCRUD.GetAllEmpresas())
+            {
+                cbEleccEmp.Items.Add(e.nombre);
+            }
+            foreach (Tutor t in asignacionCRUD.GetAllTutores())
+            {
+                cbEleccTutor.Items.Add(t.nombre);
+            }
+        }
+
     }
 }

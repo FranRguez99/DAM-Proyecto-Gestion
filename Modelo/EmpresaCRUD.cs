@@ -106,7 +106,7 @@ namespace DDI_GestionEmpresa.Modelo
 
         public void DeleteEmpresa(Empresa empresa)
         {
-            string query = "DELETE FROM empresa WHERE idEmpresa=@idEmpresa";
+            string query = "DELETE FROM empresas WHERE idEmpresa=@idEmpresa";
             MySqlCommand cmd = new MySqlCommand(query, databaseConnection.getConnection());
             cmd.Parameters.AddWithValue("@idEmpresa", empresa.idEmpresa);
 
